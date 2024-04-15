@@ -182,6 +182,8 @@ func _physics_process(delta):
 	_was_on_ground = is_feet_on_ground()
 	move_and_slide()
 
+func _process(delta):
+	pass # Implementer les animations
 
 ## Use this instead of coyote_timer.start() to check if the coyote_timer is enabled first
 func start_coyote_timer():
