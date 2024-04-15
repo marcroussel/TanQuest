@@ -1,0 +1,51 @@
+[gd_scene load_steps=8 format=3 uid="uid://d2m61ragmhdyj"]
+
+[ext_resource type="Script" path="res://scripts/player_controller.gd" id="1_w12m7"]
+[ext_resource type="Texture2D" uid="uid://ekhnkk6dwig" path="res://art/Fumiko.png" id="2_061wq"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pu4hu"]
+size = Vector2(20, 28)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ixhx8"]
+atlas = ExtResource("2_061wq")
+region = Rect2(384, 0, 24, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_aucft"]
+atlas = ExtResource("2_061wq")
+region = Rect2(384, 32, 24, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e1fwj"]
+atlas = ExtResource("2_061wq")
+region = Rect2(384, 64, 24, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_57bft"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ixhx8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_aucft")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e1fwj")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 2.0
+}]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+script = ExtResource("1_w12m7")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+position = Vector2(0, 1)
+shape = SubResource("RectangleShape2D_pu4hu")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D"]
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_57bft")
+animation = &"idle"
+frame_progress = 0.302778
