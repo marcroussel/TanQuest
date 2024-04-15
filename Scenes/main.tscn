@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=3 uid="uid://b5agf11t0s5ow"]
+
+[sub_resource type="TileSet" id="TileSet_mh06x"]
+tile_size = Vector2i(32, 32)
+uv_clipping = true
+
+[node name="Main" type="Node"]
+
+[node name="GameTileMap" type="TileMap" parent="."]
+tile_set = SubResource("TileSet_mh06x")
+format = 2
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(577, 324)
