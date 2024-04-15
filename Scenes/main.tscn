@@ -1,4 +1,6 @@
-[gd_scene load_steps=2 format=3 uid="uid://b5agf11t0s5ow"]
+[gd_scene load_steps=3 format=3 uid="uid://b5agf11t0s5ow"]
+
+[ext_resource type="PackedScene" uid="uid://d2m61ragmhdyj" path="res://Scenes/player.tscn" id="1_n2d1e"]
 
 [sub_resource type="TileSet" id="TileSet_mh06x"]
 tile_size = Vector2i(32, 32)
@@ -12,3 +14,6 @@ format = 2
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(577, 324)
+
+[node name="Node2D" parent="." instance=ExtResource("1_n2d1e")]
+position = Vector2(2, -1)
