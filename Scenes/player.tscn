@@ -33,6 +33,11 @@ animations = [{
 "loop": true,
 "name": &"idle",
 "speed": 2.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"run",
+"speed": 5.0
 }]
 
 [node name="Node2D" type="Node2D"]
@@ -47,5 +52,4 @@ shape = SubResource("RectangleShape2D_pu4hu")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D"]
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_57bft")
-animation = &"idle"
-frame_progress = 0.302778
+animation = &"run"
