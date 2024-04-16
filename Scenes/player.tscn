@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://d2m61ragmhdyj"]
+[gd_scene load_steps=22 format=3 uid="uid://ckfkj75wocotd"]
 
 [ext_resource type="Script" path="res://scripts/player_controller.gd" id="1_w12m7"]
 [ext_resource type="Texture2D" uid="uid://ekhnkk6dwig" path="res://art/Fumiko.png" id="2_061wq"]
@@ -161,6 +161,7 @@ size = Vector2(9, 28)
 [node name="Node2D" type="Node2D"]
 
 [node name="Player" type="CharacterBody2D" parent="."]
+scale = Vector2(1.5, 1.5)
 script = ExtResource("1_w12m7")
 
 [node name="PlayerSpriteAnimations" type="AnimatedSprite2D" parent="Player"]
