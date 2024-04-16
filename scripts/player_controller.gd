@@ -13,12 +13,20 @@ signal hit_ground()
 @export var input_right : String = "move_right"
 ## Name of input action to jump.
 @export var input_jump : String = "jump"
+@export var animation_node : AnimatedSprite2D
 
 
 const DEFAULT_MAX_JUMP_HEIGHT = 150
 const DEFAULT_MIN_JUMP_HEIGHT = 60
 const DEFAULT_DOUBLE_JUMP_HEIGHT = 100
 const DEFAULT_JUMP_DURATION = 0.3
+
+const IDLE_ANIMATION = "idle"
+const RUN_ANIMATION = "run"
+const WALK_ANIMATION = "walk"
+const DASH_ANIMATION = "dash"
+const JUMP_ANIMATION = "jump"
+const ATTACK_ANIMATION = "attack"
 
 var _max_jump_height: float = DEFAULT_MAX_JUMP_HEIGHT
 ## The max jump height in pixels (holding jump).
@@ -184,11 +192,21 @@ func _physics_process(delta):
 
 func _process(delta):
 	if (velocity.y != 0):
-		#print("vertical")
-		pass
+		animation_node.animation = JUMP_ANIMATION
+		if(velocity.x >= 0):
+			animation_node.flip_h = false
+		else:
+			animation_node.flip_h = true
 	else:
-		#print("horizontal")
-		pass
+		if(velocity.x == 0):
+			animation_node.animation = IDLE_ANIMATION
+			animation_node.flip_h = false
+		else:
+			animation_node.animation = RUN_ANIMATION
+			if(velocity.x > 0):
+				animation_node.flip_h = false
+			else:
+				animation_node.flip_h = true
 		
 ## Use this instead of coyote_timer.start() to check if the coyote_timer is enabled first
 func start_coyote_timer():
