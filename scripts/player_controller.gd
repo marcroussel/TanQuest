@@ -15,7 +15,7 @@ signal hit_ground()
 @export var input_jump : String = "jump"
 @export var animation_node : AnimatedSprite2D
 @export var zero_threshold : float = 0.2
-
+@export var shader_rectangle : ColorRect
 const DEFAULT_MAX_JUMP_HEIGHT = 150
 const DEFAULT_MIN_JUMP_HEIGHT = 60
 const DEFAULT_DOUBLE_JUMP_HEIGHT = 100
