@@ -1,9 +1,10 @@
-[gd_scene load_steps=25 format=3 uid="uid://d2m61ragmhdyj"]
+[gd_scene load_steps=26 format=3 uid="uid://d2m61ragmhdyj"]
 
 [ext_resource type="Script" path="res://scripts/player_controller.gd" id="1_w12m7"]
 [ext_resource type="Texture2D" uid="uid://ekhnkk6dwig" path="res://art/Fumiko.png" id="2_061wq"]
 [ext_resource type="Shader" path="res://shader/shader.gdshader" id="3_adr66"]
 [ext_resource type="Script" path="res://scripts/shader_loader.gd" id="4_n1om1"]
+[ext_resource type="Texture2D" uid="uid://m75k4p01oh5r" path="res://art/TorchLight.png" id="5_bpt7c"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_3bug6"]
 atlas = ExtResource("2_061wq")
@@ -199,5 +200,13 @@ offset_top = -518.0
 offset_right = 624.0
 offset_bottom = 246.0
 script = ExtResource("4_n1om1")
+
+[node name="PlayerLight" type="PointLight2D" parent="Player"]
+texture = ExtResource("5_bpt7c")
+texture_scale = 1.9
+
+[node name="DirectionalLight2D" type="DirectionalLight2D" parent="."]
+energy = 0.75
+blend_mode = 1
 
 [connection signal="jumped" from="Player" to="Player" method="_on_jumped"]
