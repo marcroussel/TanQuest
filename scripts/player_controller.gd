@@ -184,10 +184,12 @@ func _physics_process(delta):
 
 func _process(delta):
 	if (velocity.y != 0):
-		print("vertical")
+		#print("vertical")
+		pass
 	else:
-		print("horizontal")
-
+		#print("horizontal")
+		pass
+		
 ## Use this instead of coyote_timer.start() to check if the coyote_timer is enabled first
 func start_coyote_timer():
 	if is_coyote_time_enabled:
