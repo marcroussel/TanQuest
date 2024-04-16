@@ -163,7 +163,8 @@ size = Vector2(9, 28)
 [node name="Player" type="CharacterBody2D" parent="." node_paths=PackedStringArray("animation_node")]
 script = ExtResource("1_w12m7")
 animation_node = NodePath("PlayerSpriteAnimations")
-max_jump_height = 300.0
+zero_threshold = 1.0
+double_jump_height = 150.0
 max_jump_amount = 2
 max_acceleration = 5000
 
@@ -179,6 +180,8 @@ shape = SubResource("RectangleShape2D_pu4hu")
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 offset = Vector2(0, -120)
-zoom = Vector2(1.5, 1.5)
+zoom = Vector2(2, 2)
+position_smoothing_enabled = true
+editor_draw_drag_margin = true
 
 [connection signal="jumped" from="Player" to="Player" method="_on_jumped"]

@@ -14,6 +14,7 @@ signal hit_ground()
 ## Name of input action to jump.
 @export var input_jump : String = "jump"
 @export var animation_node : AnimatedSprite2D
+@export var zero_threshold : float = 0.2
 
 const DEFAULT_MAX_JUMP_HEIGHT = 150
 const DEFAULT_MIN_JUMP_HEIGHT = 60
@@ -199,7 +200,7 @@ func _process(delta):
 		else:
 			animation_node.flip_h = true
 	else:
-		if(velocity.x == 0):
+		if(velocity.x > 0 - zero_threshold && velocity.x < 0 + zero_threshold):
 			if(animation_node.animation != IDLE_ANIMATION):
 				animation_node.stop()
 				animation_node.play(IDLE_ANIMATION)
