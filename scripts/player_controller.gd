@@ -13,12 +13,19 @@ signal hit_ground()
 @export var input_right : String = "move_right"
 ## Name of input action to jump.
 @export var input_jump : String = "jump"
-
+@export var animation_node : AnimatedSprite2D
 
 const DEFAULT_MAX_JUMP_HEIGHT = 150
 const DEFAULT_MIN_JUMP_HEIGHT = 60
 const DEFAULT_DOUBLE_JUMP_HEIGHT = 100
 const DEFAULT_JUMP_DURATION = 0.3
+
+const IDLE_ANIMATION = "idle"
+const RUN_ANIMATION = "run"
+const WALK_ANIMATION = "walk"
+const DASH_ANIMATION = "dash"
+const JUMP_ANIMATION = "jump"
+const ATTACK_ANIMATION = "attack"
 
 var _max_jump_height: float = DEFAULT_MAX_JUMP_HEIGHT
 ## The max jump height in pixels (holding jump).
@@ -183,8 +190,29 @@ func _physics_process(delta):
 	move_and_slide()
 
 func _process(delta):
-	pass # Implementer les animations
-
+	if (velocity.y != 0):
+		if(animation_node.animation != JUMP_ANIMATION && animation_node.animation != DASH_ANIMATION):
+			animation_node.stop()
+			animation_node.play(JUMP_ANIMATION)
+		if(velocity.x >= 0):
+			animation_node.flip_h = false
+		else:
+			animation_node.flip_h = true
+	else:
+		if(velocity.x == 0):
+			if(animation_node.animation != IDLE_ANIMATION):
+				animation_node.stop()
+				animation_node.play(IDLE_ANIMATION)
+			animation_node.flip_h = false
+		else:
+			if(animation_node.animation != RUN_ANIMATION):
+				animation_node.stop()
+				animation_node.play(RUN_ANIMATION)
+			if(velocity.x > 0):
+				animation_node.flip_h = false
+			else:
+				animation_node.flip_h = true
+		
 ## Use this instead of coyote_timer.start() to check if the coyote_timer is enabled first
 func start_coyote_timer():
 	if is_coyote_time_enabled:
@@ -321,3 +349,8 @@ func calculate_friction(time_to_max):
 ## Formula from [url]https://www.reddit.com/r/gamedev/comments/bdbery/comment/ekxw9g4/?utm_source=share&utm_medium=web2x&context=3[/url]
 func calculate_speed(p_max_speed, p_friction):
 	return (p_max_speed / p_friction) - p_max_speed
+
+
+func _on_jumped(is_ground_jump):
+	if(!is_ground_jump):
+		animation_node.animation = DASH_ANIMATION
