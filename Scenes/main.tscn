@@ -1,8 +1,7 @@
-[gd_scene load_steps=8 format=3 uid="uid://b5agf11t0s5ow"]
+[gd_scene load_steps=7 format=3 uid="uid://b5agf11t0s5ow"]
 
 [ext_resource type="PackedScene" uid="uid://d2m61ragmhdyj" path="res://Scenes/player.tscn" id="1_n2d1e"]
 [ext_resource type="Texture2D" uid="uid://cplu6jda6qqh" path="res://art/goodly-2x.png" id="1_x6swu"]
-[ext_resource type="PackedScene" uid="uid://csu0tdie21hfx" path="res://Scenes/torch.tscn" id="3_dbp24"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_75oiw"]
 resource_name = "TanQuestGroundAtlas"
@@ -825,6 +824,3 @@ position = Vector2(169, 105)
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_4edct")
 camera_attributes = SubResource("CameraAttributesPractical_cfor4")
-
-[node name="Node2D2" parent="." instance=ExtResource("3_dbp24")]
-position = Vector2(476, 91)
