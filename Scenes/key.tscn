@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://cysls2ocm82nk"]
+[gd_scene load_steps=7 format=3 uid="uid://cysls2ocm82nk"]
 
 [ext_resource type="Texture2D" uid="uid://br11u3wm2wjao" path="res://art/medival_tilemap.png" id="1_ehrnn"]
 [ext_resource type="Script" path="res://scripts/key_animation.gd" id="2_8mfux"]
@@ -28,10 +28,14 @@ animations = [{
 "speed": 6.0
 }]
 
-[node name="Key" type="Node2D" node_paths=PackedStringArray("animation_node")]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qfc0x"]
+size = Vector2(15, 13)
+
+[node name="Key" type="Node2D" node_paths=PackedStringArray("animation_node", "colision_box")]
 position = Vector2(576, 327)
 script = ExtResource("2_8mfux")
 animation_node = NodePath("KeySprite")
+colision_box = NodePath("KeyCollision")
 offset_amount = 2.0
 
 [node name="KeySprite" type="AnimatedSprite2D" parent="."]
@@ -44,3 +48,12 @@ frame_progress = 0.458801
 color = Color(1, 1, 0.0313726, 1)
 texture = ExtResource("3_lx8oi")
 texture_scale = 0.5
+
+[node name="KeyCollision" type="Area2D" parent="."]
+collision_layer = 4
+
+[node name="KeyColisionShape" type="CollisionShape2D" parent="KeyCollision"]
+position = Vector2(0.5, 0.5)
+shape = SubResource("RectangleShape2D_qfc0x")
+
+[connection signal="area_entered" from="KeyCollision" to="." method="_on_key_collision_area_entered"]

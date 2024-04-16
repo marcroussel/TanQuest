@@ -167,11 +167,10 @@ shader_parameter/scanline_count = 0.0
 
 [node name="Node2D" type="Node2D"]
 
-[node name="Player" type="CharacterBody2D" parent="." node_paths=PackedStringArray("animation_node", "shader_rectangle")]
+[node name="Player" type="CharacterBody2D" parent="." node_paths=PackedStringArray("animation_node")]
 script = ExtResource("1_w12m7")
 animation_node = NodePath("PlayerSpriteAnimations")
 zero_threshold = 1.0
-shader_rectangle = NodePath("Camera2D/ShaderRect")
 double_jump_height = 150.0
 max_jump_amount = 2
 max_acceleration = 5000
@@ -204,6 +203,15 @@ script = ExtResource("4_n1om1")
 [node name="PlayerLight" type="PointLight2D" parent="Player"]
 texture = ExtResource("5_bpt7c")
 texture_scale = 1.9
+
+[node name="PlayerInteractor" type="Area2D" parent="Player"]
+collision_mask = 4
+
+[node name="PlayerHitbox" type="CollisionShape2D" parent="Player/PlayerInteractor"]
+position = Vector2(0, 1)
+scale = Vector2(1.1, 1.1)
+shape = SubResource("RectangleShape2D_pu4hu")
+debug_color = Color(1, 0, 0.2, 0.419608)
 
 [node name="DirectionalLight2D" type="DirectionalLight2D" parent="."]
 energy = 0.75

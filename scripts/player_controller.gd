@@ -4,7 +4,7 @@ class_name PlatformerController2D
 
 signal jumped(is_ground_jump: bool)
 signal hit_ground()
-
+signal key_touched(target : Area2D)
 
 # Set these to the name of your action (in the Input Map)
 ## Name of input action to move left.
@@ -15,7 +15,7 @@ signal hit_ground()
 @export var input_jump : String = "jump"
 @export var animation_node : AnimatedSprite2D
 @export var zero_threshold : float = 0.2
-@export var shader_rectangle : ColorRect
+
 const DEFAULT_MAX_JUMP_HEIGHT = 150
 const DEFAULT_MIN_JUMP_HEIGHT = 60
 const DEFAULT_DOUBLE_JUMP_HEIGHT = 100
@@ -189,6 +189,7 @@ func _physics_process(delta):
 	
 	_was_on_ground = is_feet_on_ground()
 	move_and_slide()
+	
 
 func _process(delta):
 	if (velocity.y != 0):
