@@ -32,4 +32,4 @@ texture = ExtResource("1_yfdxc")
 [node name="animationTimer" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_oixqy")
 autoplay = "default"
-frame_progress = 0.703782
+frame_progress = 0.686417

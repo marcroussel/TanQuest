@@ -200,9 +200,9 @@ offset_right = 624.0
 offset_bottom = 246.0
 script = ExtResource("4_n1om1")
 
-[node name="PlayerLight" type="PointLight2D" parent="Player"]
+[node name="PlayerTorch" type="PointLight2D" parent="Player"]
 texture = ExtResource("5_bpt7c")
-texture_scale = 1.9
+texture_scale = 1.5
 
 [node name="PlayerInteractor" type="Area2D" parent="Player"]
 collision_mask = 4
@@ -213,7 +213,7 @@ scale = Vector2(1.1, 1.1)
 shape = SubResource("RectangleShape2D_pu4hu")
 debug_color = Color(1, 0, 0.2, 0.419608)
 
-[node name="DirectionalLight2D" type="DirectionalLight2D" parent="."]
+[node name="LightRemover" type="DirectionalLight2D" parent="."]
 energy = 0.75
 blend_mode = 1
 
