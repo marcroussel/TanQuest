@@ -38,9 +38,9 @@ offset_amount = 2.0
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_g11fv")
 autoplay = "default"
-frame_progress = 0.530313
+frame_progress = 0.458801
 
-[node name="PointLight2D" type="PointLight2D" parent="KeySprite"]
+[node name="KeyLight" type="PointLight2D" parent="KeySprite"]
 color = Color(1, 1, 0.0313726, 1)
 texture = ExtResource("3_lx8oi")
 texture_scale = 0.5

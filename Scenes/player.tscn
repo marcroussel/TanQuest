@@ -179,7 +179,7 @@ max_acceleration = 5000
 [node name="PlayerSpriteAnimations" type="AnimatedSprite2D" parent="Player"]
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_57bft")
-animation = &"dash"
+animation = &"walk"
 autoplay = "idle"
 
 [node name="PlayerHitbox" type="CollisionShape2D" parent="Player"]
