@@ -183,7 +183,10 @@ func _physics_process(delta):
 	move_and_slide()
 
 func _process(delta):
-	pass # Implementer les animations
+	if (velocity.y != 0):
+		print("vertical")
+	else:
+		print("horizontal")
 
 ## Use this instead of coyote_timer.start() to check if the coyote_timer is enabled first
 func start_coyote_timer():
