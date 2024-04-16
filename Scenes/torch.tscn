@@ -1,8 +1,35 @@
-[gd_scene load_steps=2 format=3 uid="uid://csu0tdie21hfx"]
+[gd_scene load_steps=4 format=3 uid="uid://csu0tdie21hfx"]
 
+[ext_resource type="Script" path="res://scripts/torch.gd" id="1_h17il"]
 [ext_resource type="Texture2D" uid="uid://m75k4p01oh5r" path="res://art/TorchLight.png" id="1_yfdxc"]
 
-[node name="Node2D" type="Node2D"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_oixqy"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": null
+}, {
+"duration": 1.0,
+"texture": null
+}, {
+"duration": 1.0,
+"texture": null
+}, {
+"duration": 1.0,
+"texture": null
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
-[node name="PointLight2D" type="PointLight2D" parent="."]
+[node name="torch" type="Node2D"]
+script = ExtResource("1_h17il")
+
+[node name="lightSource" type="PointLight2D" parent="."]
 texture = ExtResource("1_yfdxc")
+
+[node name="animationTimer" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_oixqy")
+autoplay = "default"
+frame_progress = 0.703782

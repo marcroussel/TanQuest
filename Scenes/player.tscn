@@ -163,7 +163,7 @@ size = Vector2(9, 28)
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_uxpdf"]
 shader = ExtResource("3_adr66")
-shader_parameter/scanline_count = 0.0
+shader_parameter/scanline_count = 500.0
 
 [node name="Node2D" type="Node2D"]
 
