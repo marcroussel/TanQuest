@@ -162,12 +162,18 @@ size = Vector2(9, 28)
 
 [node name="Player" type="CharacterBody2D" parent="."]
 script = ExtResource("1_w12m7")
+max_jump_height = 200.0
+max_jump_amount = 2
+max_acceleration = 5000
+can_hold_jump = true
 
 [node name="PlayerSpriteAnimations" type="AnimatedSprite2D" parent="Player"]
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_57bft")
-animation = &"jump"
+animation = &"attack"
 
 [node name="PlayerHitbox" type="CollisionShape2D" parent="Player"]
 position = Vector2(0, 1)
 shape = SubResource("RectangleShape2D_pu4hu")
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
