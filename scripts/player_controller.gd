@@ -15,7 +15,6 @@ signal hit_ground()
 @export var input_jump : String = "jump"
 @export var animation_node : AnimatedSprite2D
 
-
 const DEFAULT_MAX_JUMP_HEIGHT = 150
 const DEFAULT_MIN_JUMP_HEIGHT = 60
 const DEFAULT_DOUBLE_JUMP_HEIGHT = 100
@@ -192,17 +191,23 @@ func _physics_process(delta):
 
 func _process(delta):
 	if (velocity.y != 0):
-		animation_node.animation = JUMP_ANIMATION
+		if(animation_node.animation != JUMP_ANIMATION && animation_node.animation != DASH_ANIMATION):
+			animation_node.stop()
+			animation_node.play(JUMP_ANIMATION)
 		if(velocity.x >= 0):
 			animation_node.flip_h = false
 		else:
 			animation_node.flip_h = true
 	else:
 		if(velocity.x == 0):
-			animation_node.animation = IDLE_ANIMATION
+			if(animation_node.animation != IDLE_ANIMATION):
+				animation_node.stop()
+				animation_node.play(IDLE_ANIMATION)
 			animation_node.flip_h = false
 		else:
-			animation_node.animation = RUN_ANIMATION
+			if(animation_node.animation != RUN_ANIMATION):
+				animation_node.stop()
+				animation_node.play(RUN_ANIMATION)
 			if(velocity.x > 0):
 				animation_node.flip_h = false
 			else:
@@ -344,3 +349,8 @@ func calculate_friction(time_to_max):
 ## Formula from [url]https://www.reddit.com/r/gamedev/comments/bdbery/comment/ekxw9g4/?utm_source=share&utm_medium=web2x&context=3[/url]
 func calculate_speed(p_max_speed, p_friction):
 	return (p_max_speed / p_friction) - p_max_speed
+
+
+func _on_jumped(is_ground_jump):
+	if(!is_ground_jump):
+		animation_node.animation = DASH_ANIMATION
