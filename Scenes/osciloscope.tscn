@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://b2qkffbc7wuyi"]
 
-[ext_resource type="Script" path="res://Scenes/sinewave.gd" id="1_5qukl"]
+[ext_resource type="Script" path="res://scripts/sinewave.gd" id="1_5qukl"]
 
 [node name="Osciloscope" type="Node2D"]
 

@@ -8,7 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://m75k4p01oh5r" path="res://art/TorchLight.png" id="5_bpt7c"]
 [ext_resource type="AudioStream" uid="uid://d3cyjt6m3hsay" path="res://sounds/jump.wav" id="6_b6b26"]
 [ext_resource type="AudioStream" uid="uid://b7xrejcr2o2pg" path="res://sounds/slow-2021-08-17_-_8_Bit_Nostalgia_-_www.FesliyanStudios.com.mp3" id="6_bap1f"]
-[ext_resource type="Script" path="res://Scenes/ground_touched_particules.gd" id="9_qipo0"]
+[ext_resource type="Script" path="res://scripts/ground_touched_particules.gd" id="9_qipo0"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_xq13j"]
 shader = ExtResource("2_ai3v3")
