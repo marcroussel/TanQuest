@@ -15,6 +15,7 @@ signal key_touched(target : Area2D)
 @export var input_jump : String = "jump"
 @export var animation_node : AnimatedSprite2D
 @export var zero_threshold : float = 0.2
+@export var jump_sound_effect : AudioStreamPlayer2D
 
 const DEFAULT_MAX_JUMP_HEIGHT = 150
 const DEFAULT_MIN_JUMP_HEIGHT = 60
@@ -275,6 +276,7 @@ func is_feet_on_ground():
 
 ## Perform a ground jump, or a double jump if the character is in the air.
 func jump():
+	jump_sound_effect.play(0.0)
 	if can_double_jump():
 		double_jump()
 	else:
