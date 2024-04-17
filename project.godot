@@ -21,6 +21,7 @@ config/icon="res://tanQuestLogo.svg"
 window/size/mode=2
 window/size/borderless=true
 window/stretch/mode="canvas_items"
+mouse_cursor/custom_image="res://art/pointer2.png"
 
 [importer_defaults]
 
