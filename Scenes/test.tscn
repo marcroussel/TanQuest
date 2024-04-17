@@ -835,5 +835,5 @@ camera_attributes = SubResource("CameraAttributesPractical_cfor4")
 
 [node name="torch" parent="." instance=ExtResource("4_p7w2i")]
 position = Vector2(484, 95)
-light_size = 0.9
+light_size = 0.5
 light_variation_size = 0.1
