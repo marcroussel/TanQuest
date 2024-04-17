@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://d2m61ragmhdyj"]
+[gd_scene load_steps=28 format=3 uid="uid://d2m61ragmhdyj"]
 
 [ext_resource type="Script" path="res://scripts/player_controller.gd" id="1_w12m7"]
 [ext_resource type="Texture2D" uid="uid://ekhnkk6dwig" path="res://art/Fumiko.png" id="2_061wq"]
@@ -6,6 +6,7 @@
 [ext_resource type="Script" path="res://scripts/shader_loader.gd" id="4_n1om1"]
 [ext_resource type="Texture2D" uid="uid://m75k4p01oh5r" path="res://art/TorchLight.png" id="5_bpt7c"]
 [ext_resource type="AudioStream" uid="uid://d3cyjt6m3hsay" path="res://sounds/jump.wav" id="6_b6b26"]
+[ext_resource type="AudioStream" uid="uid://b7xrejcr2o2pg" path="res://sounds/slow-2021-08-17_-_8_Bit_Nostalgia_-_www.FesliyanStudios.com.mp3" id="6_bap1f"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_3bug6"]
 atlas = ExtResource("2_061wq")
@@ -172,7 +173,7 @@ shader_parameter/scanline_count = 500.0
 script = ExtResource("1_w12m7")
 animation_node = NodePath("PlayerSpriteAnimations")
 zero_threshold = 1.0
-jump_sound_effect = NodePath("../JumpSoundEffect")
+jump_sound_effect = NodePath("JumpSoundEffect")
 double_jump_height = 150.0
 max_jump_amount = 2
 max_acceleration = 5000
@@ -215,11 +216,16 @@ scale = Vector2(1.1, 1.1)
 shape = SubResource("RectangleShape2D_pu4hu")
 debug_color = Color(1, 0, 0.2, 0.419608)
 
+[node name="Music" type="AudioStreamPlayer2D" parent="Player"]
+stream = ExtResource("6_bap1f")
+volume_db = -10.307
+autoplay = true
+
+[node name="JumpSoundEffect" type="AudioStreamPlayer2D" parent="Player"]
+stream = ExtResource("6_b6b26")
+
 [node name="LightRemover" type="DirectionalLight2D" parent="."]
 energy = 0.75
 blend_mode = 1
-
-[node name="JumpSoundEffect" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("6_b6b26")
 
 [connection signal="jumped" from="Player" to="Player" method="_on_jumped"]
