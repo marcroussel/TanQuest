@@ -6,8 +6,8 @@
 
 [node name="ColorRect" type="ColorRect" parent="."]
 self_modulate = Color(0, 0, 0, 1)
-offset_right = 1920.0
-offset_bottom = 1080.0
+offset_right = 1153.0
+offset_bottom = 648.0
 
 [node name="target" type="Line2D" parent="."]
 points = PackedVector2Array(1919, -1)
@@ -38,3 +38,6 @@ amplitude_c = 0.0
 number_of_points = 500
 offset_y = 300.0
 space_between_points = 8.0
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(577, 325)
