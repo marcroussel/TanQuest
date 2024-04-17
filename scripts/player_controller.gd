@@ -158,7 +158,10 @@ func _input(_event):
 		
 	if Input.is_action_just_released(input_jump):
 		holding_jump = false
-
+		
+	if Input.is_action_just_pressed("debug_music_switch"):
+		var music : AudioStreamPlayer2D = get_node("Music")
+		music.stream_paused = !music.stream_paused
 
 func _physics_process(delta):
 	if is_coyote_timer_running() or current_jump_type == JumpType.NONE:
@@ -192,7 +195,7 @@ func _physics_process(delta):
 	move_and_slide()
 	
 
-func _process(delta):
+func _process(_delta):
 	if (velocity.y != 0):
 		if(animation_node.animation != JUMP_ANIMATION && animation_node.animation != DASH_ANIMATION):
 			animation_node.stop()

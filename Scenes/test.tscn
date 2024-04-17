@@ -823,11 +823,11 @@ layer_0/tile_data = PackedInt32Array(0, 589825, 2, 1, 589825, 2, 2, 589825, 2, 3
 [node name="Key" parent="GameTileMap" instance=ExtResource("2_ydoki")]
 position = Vector2(404, 284)
 
-[node name="Key" parent="." instance=ExtResource("2_ydoki")]
+[node name="Key2" parent="GameTileMap" instance=ExtResource("2_ydoki")]
 position = Vector2(129, 289)
 
-[node name="Node2D" parent="." instance=ExtResource("2_vtkea")]
-position = Vector2(169, 105)
+[node name="Player" parent="." instance=ExtResource("2_vtkea")]
+position = Vector2(149, 94)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_4edct")

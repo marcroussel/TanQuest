@@ -15,7 +15,7 @@ func _ready():
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
+func _process(_delta):
 	var position : float = animation_node.frame * (PI/2)
 	animation_node.position.y = sin(position)* offset_amount
 
