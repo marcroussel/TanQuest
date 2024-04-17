@@ -1,12 +1,22 @@
-[gd_scene load_steps=28 format=3 uid="uid://d2m61ragmhdyj"]
+[gd_scene load_steps=30 format=3 uid="uid://d2m61ragmhdyj"]
 
 [ext_resource type="Script" path="res://scripts/player_controller.gd" id="1_w12m7"]
 [ext_resource type="Texture2D" uid="uid://ekhnkk6dwig" path="res://art/Fumiko.png" id="2_061wq"]
+[ext_resource type="Shader" path="res://shader/outline.gdshader" id="2_ai3v3"]
 [ext_resource type="Shader" path="res://shader/old_tv.gdshader" id="3_2h8v3"]
 [ext_resource type="Script" path="res://scripts/shader_loader.gd" id="4_n1om1"]
 [ext_resource type="Texture2D" uid="uid://m75k4p01oh5r" path="res://art/TorchLight.png" id="5_bpt7c"]
 [ext_resource type="AudioStream" uid="uid://d3cyjt6m3hsay" path="res://sounds/jump.wav" id="6_b6b26"]
 [ext_resource type="AudioStream" uid="uid://b7xrejcr2o2pg" path="res://sounds/slow-2021-08-17_-_8_Bit_Nostalgia_-_www.FesliyanStudios.com.mp3" id="6_bap1f"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_xq13j"]
+shader = ExtResource("2_ai3v3")
+shader_parameter/rainbow = false
+shader_parameter/line_color = Vector4(0, 1, 1, 1)
+shader_parameter/line_scale = 1.0
+shader_parameter/frequency = 0.0
+shader_parameter/light_offset = 1e-05
+shader_parameter/alpha = 1.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_3bug6"]
 atlas = ExtResource("2_061wq")
@@ -180,6 +190,7 @@ max_acceleration = 5000
 
 [node name="PlayerSpriteAnimations" type="AnimatedSprite2D" parent="Player"]
 texture_filter = 1
+material = SubResource("ShaderMaterial_xq13j")
 sprite_frames = SubResource("SpriteFrames_57bft")
 animation = &"walk"
 autoplay = "idle"
