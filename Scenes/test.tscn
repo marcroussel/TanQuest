@@ -818,7 +818,7 @@ position = Vector2(404, 284)
 position = Vector2(129, 289)
 
 [node name="Player" parent="." instance=ExtResource("2_vtkea")]
-position = Vector2(149, 94)
+position = Vector2(172, 93)
 
 [node name="torch" parent="." instance=ExtResource("4_p7w2i")]
 position = Vector2(484, 95)

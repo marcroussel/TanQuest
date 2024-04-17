@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=3 uid="uid://d2m61ragmhdyj"]
+[gd_scene load_steps=31 format=3 uid="uid://d2m61ragmhdyj"]
 
 [ext_resource type="Script" path="res://scripts/player_controller.gd" id="1_w12m7"]
 [ext_resource type="Texture2D" uid="uid://ekhnkk6dwig" path="res://art/Fumiko.png" id="2_061wq"]
@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://m75k4p01oh5r" path="res://art/TorchLight.png" id="5_bpt7c"]
 [ext_resource type="AudioStream" uid="uid://d3cyjt6m3hsay" path="res://sounds/jump.wav" id="6_b6b26"]
 [ext_resource type="AudioStream" uid="uid://b7xrejcr2o2pg" path="res://sounds/slow-2021-08-17_-_8_Bit_Nostalgia_-_www.FesliyanStudios.com.mp3" id="6_bap1f"]
+[ext_resource type="Script" path="res://Scenes/ground_touched_particules.gd" id="9_qipo0"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_xq13j"]
 shader = ExtResource("2_ai3v3")
@@ -204,6 +205,7 @@ shape = SubResource("RectangleShape2D_pu4hu")
 offset = Vector2(0, -20)
 zoom = Vector2(2, 2)
 position_smoothing_enabled = true
+position_smoothing_speed = 10.0
 editor_draw_drag_margin = true
 
 [node name="old_tv_shader" type="ColorRect" parent="Player/Camera2D"]
@@ -237,8 +239,75 @@ autoplay = true
 [node name="JumpSoundEffect" type="AudioStreamPlayer2D" parent="Player"]
 stream = ExtResource("6_b6b26")
 
+[node name="ParticuleHitGround" type="CPUParticles2D" parent="Player" node_paths=PackedStringArray("particule_timer", "sound_effect")]
+position = Vector2(0, 20)
+emitting = false
+amount = 200
+lifetime = 0.5
+preprocess = 60.0
+explosiveness = 0.1
+randomness = 0.29
+lifetime_randomness = 0.29
+direction = Vector2(0, -1)
+spread = 100.15
+gravity = Vector2(0, 200)
+initial_velocity_max = 150.0
+linear_accel_min = -22.22
+linear_accel_max = -22.22
+damping_max = 1.5
+angle_min = -720.0
+angle_max = 720.0
+scale_amount_max = 3.0
+color = Color(0.643137, 0.643137, 0.643137, 1)
+script = ExtResource("9_qipo0")
+particule_timer = NodePath("ParticuleTimer")
+sound_effect = NodePath("AudioStreamPlayer2D")
+
+[node name="ParticuleTimer" type="Timer" parent="Player/ParticuleHitGround"]
+wait_time = 0.1
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Player/ParticuleHitGround"]
+stream = ExtResource("6_b6b26")
+pitch_scale = 0.5
+attenuation = 19.6983
+
+[node name="ParticuleHitGround2" type="CPUParticles2D" parent="Player" node_paths=PackedStringArray("particule_timer", "sound_effect")]
+position = Vector2(0, 20)
+emitting = false
+amount = 200
+lifetime = 0.5
+preprocess = 60.0
+explosiveness = 0.1
+randomness = 0.29
+lifetime_randomness = 0.29
+direction = Vector2(0, -1)
+spread = 100.15
+gravity = Vector2(0, 200)
+initial_velocity_max = 150.0
+linear_accel_min = -22.22
+linear_accel_max = -22.22
+damping_max = 1.5
+angle_min = -720.0
+angle_max = 720.0
+scale_amount_max = 3.0
+color = Color(0.643137, 0.643137, 0.643137, 1)
+script = ExtResource("9_qipo0")
+particule_timer = NodePath("../ParticuleHitGround/ParticuleTimer")
+sound_effect = NodePath("../ParticuleHitGround/AudioStreamPlayer2D")
+
+[node name="ParticuleTimer" type="Timer" parent="Player/ParticuleHitGround2"]
+wait_time = 0.1
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Player/ParticuleHitGround2"]
+stream = ExtResource("6_b6b26")
+pitch_scale = 0.5
+attenuation = 19.6983
+
 [node name="LightRemover" type="DirectionalLight2D" parent="."]
 energy = 0.75
 blend_mode = 1
 
+[connection signal="hit_ground" from="Player" to="Player/ParticuleHitGround" method="_on_player_hit_ground"]
 [connection signal="jumped" from="Player" to="Player" method="_on_jumped"]
+[connection signal="timeout" from="Player/ParticuleHitGround/ParticuleTimer" to="Player/ParticuleHitGround" method="_on_particule_timer_timeout"]
+[connection signal="timeout" from="Player/ParticuleHitGround2/ParticuleTimer" to="Player/ParticuleHitGround2" method="_on_particule_timer_timeout"]
