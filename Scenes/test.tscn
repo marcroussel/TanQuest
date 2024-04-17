@@ -799,19 +799,10 @@ uv_clipping = true
 physics_layer_0/collision_layer = 1
 sources/1 = SubResource("TileSetAtlasSource_75oiw")
 
-[sub_resource type="Environment" id="Environment_4edct"]
-background_energy_multiplier = 0.0
-ambient_light_source = 3
-ambient_light_color = Color(0.737255, 0.737255, 0.737255, 1)
-ambient_light_sky_contribution = 0.0
-ambient_light_energy = 0.0
-tonemap_exposure = 0.0
-ssil_enabled = true
+[sub_resource type="Environment" id="Environment_iymfc"]
 glow_enabled = true
-glow_normalized = true
 
-[sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_cfor4"]
-exposure_multiplier = 0.25
+[sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_ajcry"]
 
 [node name="Main" type="Node"]
 
@@ -829,11 +820,11 @@ position = Vector2(129, 289)
 [node name="Player" parent="." instance=ExtResource("2_vtkea")]
 position = Vector2(149, 94)
 
-[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = SubResource("Environment_4edct")
-camera_attributes = SubResource("CameraAttributesPractical_cfor4")
-
 [node name="torch" parent="." instance=ExtResource("4_p7w2i")]
 position = Vector2(484, 95)
 light_size = 0.5
 light_variation_size = 0.1
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_iymfc")
+camera_attributes = SubResource("CameraAttributesPractical_ajcry")

@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://scripts/player_controller.gd" id="1_w12m7"]
 [ext_resource type="Texture2D" uid="uid://ekhnkk6dwig" path="res://art/Fumiko.png" id="2_061wq"]
-[ext_resource type="Shader" path="res://shader/shader.gdshader" id="3_adr66"]
+[ext_resource type="Shader" path="res://shader/old_tv.gdshader" id="3_2h8v3"]
 [ext_resource type="Script" path="res://scripts/shader_loader.gd" id="4_n1om1"]
 [ext_resource type="Texture2D" uid="uid://m75k4p01oh5r" path="res://art/TorchLight.png" id="5_bpt7c"]
 [ext_resource type="AudioStream" uid="uid://d3cyjt6m3hsay" path="res://sounds/jump.wav" id="6_b6b26"]
@@ -164,7 +164,7 @@ animations = [{
 size = Vector2(9, 28)
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_uxpdf"]
-shader = ExtResource("3_adr66")
+shader = ExtResource("3_2h8v3")
 shader_parameter/scanline_count = 500.0
 
 [node name="Node2D" type="Node2D"]
@@ -185,6 +185,7 @@ animation = &"walk"
 autoplay = "idle"
 
 [node name="PlayerHitbox" type="CollisionShape2D" parent="Player"]
+visible = false
 position = Vector2(0, 1)
 shape = SubResource("RectangleShape2D_pu4hu")
 
@@ -194,7 +195,7 @@ zoom = Vector2(2, 2)
 position_smoothing_enabled = true
 editor_draw_drag_margin = true
 
-[node name="ShaderRect" type="ColorRect" parent="Player/Camera2D"]
+[node name="old_tv_shader" type="ColorRect" parent="Player/Camera2D"]
 visible = false
 material = SubResource("ShaderMaterial_uxpdf")
 offset_left = -618.0
@@ -208,6 +209,7 @@ texture = ExtResource("5_bpt7c")
 texture_scale = 1.5
 
 [node name="PlayerInteractor" type="Area2D" parent="Player"]
+visible = false
 collision_mask = 4
 
 [node name="PlayerHitbox" type="CollisionShape2D" parent="Player/PlayerInteractor"]
