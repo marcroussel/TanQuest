@@ -180,5 +180,6 @@ shape = SubResource("RectangleShape2D_pu4hu")
 [node name="Camera2D" type="Camera2D" parent="Player"]
 offset = Vector2(0, -120)
 zoom = Vector2(1.5, 1.5)
+position_smoothing_enabled = true
 
 [connection signal="jumped" from="Player" to="Player" method="_on_jumped"]
