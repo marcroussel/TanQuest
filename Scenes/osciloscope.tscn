@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://b2qkffbc7wuyi"]
 
-[ext_resource type="Script" path="res://scripts/sinewave.gd" id="1_5qukl"]
+[ext_resource type="Script" path="res://scripts/sinewave.gd" id="1_xbspq"]
 
 [node name="Osciloscope" type="Node2D"]
 
@@ -14,25 +14,27 @@ points = PackedVector2Array(1919, -1)
 width = 4.0
 default_color = Color(1, 0, 0, 1)
 antialiased = true
-script = ExtResource("1_5qukl")
+script = ExtResource("1_xbspq")
 frequency_b = 2.0
 frequency_c = 3.0
 amplitude_a = 90.0
 amplitude_b = 90.0
 amplitude_c = 0.0
-number_of_points = 1500
+number_of_points = 500
 offset_y = 300.0
+space_between_points = 8.0
 
 [node name="player" type="Line2D" parent="."]
 points = PackedVector2Array(1919, -1)
 width = 3.0
 default_color = Color(0, 0, 1, 1)
 antialiased = true
-script = ExtResource("1_5qukl")
+script = ExtResource("1_xbspq")
 frequency_b = 2.0
 frequency_c = 3.0
 amplitude_a = 0.0
 amplitude_b = 0.0
 amplitude_c = 0.0
-number_of_points = 1000
+number_of_points = 500
 offset_y = 300.0
+space_between_points = 8.0

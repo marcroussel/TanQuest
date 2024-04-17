@@ -8,7 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://m75k4p01oh5r" path="res://art/TorchLight.png" id="5_bpt7c"]
 [ext_resource type="AudioStream" uid="uid://d3cyjt6m3hsay" path="res://sounds/jump.wav" id="6_b6b26"]
 [ext_resource type="AudioStream" uid="uid://b7xrejcr2o2pg" path="res://sounds/slow-2021-08-17_-_8_Bit_Nostalgia_-_www.FesliyanStudios.com.mp3" id="6_bap1f"]
-[ext_resource type="Script" path="res://scripts/ground_touched_particules.gd" id="9_qipo0"]
+[ext_resource type="Script" path="res://scripts/ground_touched_particules.gd" id="9_7t3yh"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_xq13j"]
 shader = ExtResource("2_ai3v3")
@@ -259,7 +259,7 @@ angle_min = -720.0
 angle_max = 720.0
 scale_amount_max = 3.0
 color = Color(0.643137, 0.643137, 0.643137, 1)
-script = ExtResource("9_qipo0")
+script = ExtResource("9_7t3yh")
 particule_timer = NodePath("ParticuleTimer")
 sound_effect = NodePath("AudioStreamPlayer2D")
 
@@ -291,7 +291,7 @@ angle_min = -720.0
 angle_max = 720.0
 scale_amount_max = 3.0
 color = Color(0.643137, 0.643137, 0.643137, 1)
-script = ExtResource("9_qipo0")
+script = ExtResource("9_7t3yh")
 particule_timer = NodePath("../ParticuleHitGround/ParticuleTimer")
 sound_effect = NodePath("../ParticuleHitGround/AudioStreamPlayer2D")
 
