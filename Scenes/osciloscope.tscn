@@ -6,8 +6,9 @@
 
 [node name="ColorRect" type="ColorRect" parent="."]
 self_modulate = Color(0, 0, 0, 1)
+offset_top = 61.0
 offset_right = 1153.0
-offset_bottom = 648.0
+offset_bottom = 248.0
 
 [node name="target" type="Line2D" parent="."]
 points = PackedVector2Array(1919, -1)
