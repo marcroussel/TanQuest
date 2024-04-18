@@ -121,8 +121,6 @@ size = Vector2(36, 32)
 
 [node name="Door" type="Node2D"]
 script = ExtResource("1_0e3h5")
-key_x = null
-key_y = null
 
 [node name="DoorSprite" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_eaxmn")

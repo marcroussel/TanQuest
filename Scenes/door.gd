@@ -1,4 +1,4 @@
-extends Sprite2D
+extends Node2D
 
 class_name Door
 @export var key_x:float = 0
@@ -16,4 +16,4 @@ func _process(delta):
 
 func _on_key_key_picked_up(x, y):
 	if(key_x == x && key_y == y):
-		
+		pass
