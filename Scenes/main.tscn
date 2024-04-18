@@ -1,11 +1,10 @@
-[gd_scene load_steps=15 format=3 uid="uid://b5agf11t0s5ow"]
+[gd_scene load_steps=13 format=3 uid="uid://b5agf11t0s5ow"]
 
 [ext_resource type="Texture2D" uid="uid://br11u3wm2wjao" path="res://art/medival_tilemap.png" id="1_as5sc"]
 [ext_resource type="Script" path="res://scripts/main.gd" id="1_hpge4"]
 [ext_resource type="PackedScene" uid="uid://d2m61ragmhdyj" path="res://Scenes/player.tscn" id="1_n2d1e"]
 [ext_resource type="Texture2D" uid="uid://cplu6jda6qqh" path="res://art/goodly-2x.png" id="1_x6swu"]
 [ext_resource type="Texture2D" uid="uid://b5d27i76s23nv" path="res://art/tanquest_mobs_and_objects_16x16.png" id="3_1hcyj"]
-[ext_resource type="Texture2D" uid="uid://cmpcgul6h261k" path="res://art/tanquest_portes.png" id="4_b1iie"]
 [ext_resource type="PackedScene" uid="uid://cysls2ocm82nk" path="res://Scenes/key.tscn" id="5_feh86"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_leq6i"]
@@ -1344,57 +1343,6 @@ texture = ExtResource("3_1hcyj")
 15:5/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 15:5/0/physics_layer_0/angular_velocity = 0.0
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_sovtm"]
-resource_name = "DoorsAtlas"
-texture = ExtResource("4_b1iie")
-texture_region_size = Vector2i(32, 32)
-0:0/0 = 0
-0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
-0:0/0/physics_layer_0/angular_velocity = 0.0
-0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
-1:0/0 = 0
-1:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
-1:0/0/physics_layer_0/angular_velocity = 0.0
-2:0/0 = 0
-2:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
-2:0/0/physics_layer_0/angular_velocity = 0.0
-3:0/0 = 0
-3:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
-3:0/0/physics_layer_0/angular_velocity = 0.0
-4:0/0 = 0
-4:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
-4:0/0/physics_layer_0/angular_velocity = 0.0
-5:0/0 = 0
-5:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
-5:0/0/physics_layer_0/angular_velocity = 0.0
-6:0/0 = 0
-6:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
-6:0/0/physics_layer_0/angular_velocity = 0.0
-7:0/0 = 0
-7:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
-7:0/0/physics_layer_0/angular_velocity = 0.0
-8:0/0 = 0
-8:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
-8:0/0/physics_layer_0/angular_velocity = 0.0
-9:0/0 = 0
-9:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
-9:0/0/physics_layer_0/angular_velocity = 0.0
-10:0/0 = 0
-10:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
-10:0/0/physics_layer_0/angular_velocity = 0.0
-11:0/0 = 0
-11:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
-11:0/0/physics_layer_0/angular_velocity = 0.0
-12:0/0 = 0
-12:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
-12:0/0/physics_layer_0/angular_velocity = 0.0
-13:0/0 = 0
-13:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
-13:0/0/physics_layer_0/angular_velocity = 0.0
-14:0/0 = 0
-14:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
-14:0/0/physics_layer_0/angular_velocity = 0.0
-
 [sub_resource type="TileSet" id="TileSet_mh06x"]
 tile_size = Vector2i(32, 32)
 uv_clipping = true
@@ -1402,7 +1350,6 @@ physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_leq6i")
 sources/1 = SubResource("TileSetAtlasSource_75oiw")
 sources/2 = SubResource("TileSetAtlasSource_1hvw6")
-sources/3 = SubResource("TileSetAtlasSource_sovtm")
 
 [sub_resource type="Environment" id="Environment_4edct"]
 background_energy_multiplier = 0.0
