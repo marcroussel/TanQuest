@@ -16,4 +16,4 @@ func _process(delta):
 
 func _on_key_key_picked_up(x, y):
 	if(key_x == x && key_y == y):
-		self.queue_free()
+		

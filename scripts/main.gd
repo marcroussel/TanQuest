@@ -16,3 +16,4 @@ func _process(delta):
 # Incrémentation du nombre de clés
 func _on_key_picked_up(x, y):
 	number_of_keys += 1
+
