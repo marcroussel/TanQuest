@@ -1387,17 +1387,17 @@ position = Vector2(169, 115)
 [node name="FirstRoomDoor" parent="GameTileMap" instance=ExtResource("6_2dcub")]
 position = Vector2(562, 304)
 
+[node name="torch" parent="GameTileMap" instance=ExtResource("8_n8scy")]
+position = Vector2(562, 305)
+light_size = 0.7
+light_variation_size = 0.1
+
 [node name="Player" parent="." instance=ExtResource("1_n2d1e")]
 position = Vector2(293, 287)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_4edct")
 camera_attributes = SubResource("CameraAttributesPractical_cfor4")
-
-[node name="torch" parent="." instance=ExtResource("8_n8scy")]
-position = Vector2(562, 305)
-light_size = 0.7
-light_variation_size = 0.1
 
 [connection signal="key_picked_up" from="GameTileMap/FirstRoomKey" to="." method="_on_key_picked_up"]
 [connection signal="key_picked_up" from="GameTileMap/FirstRoomKey" to="GameTileMap/FirstRoomDoor" method="_on_key_picked_up"]
