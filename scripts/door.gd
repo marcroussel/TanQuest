@@ -3,9 +3,13 @@ extends Node2D
 class_name Door
 @export var key_x:float = 0
 @export var key_y:float = 0
+var hitbox:RigidBody2D
+var animation_node:AnimatedSprite2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	hitbox = get_node("DoorHitBox")
+	animation_node = get_node("DoorSprite")
 	pass # Replace with function body.
 
 
@@ -13,12 +17,11 @@ func _ready():
 func _process(delta):
 	pass
 
-# Fonction déclenchée lorsqu'un body entre dans la zone d'Area2D
-func _on_area_2d_body_entered(body):
-	
-	# Importation du nombre de clés du joueur
-	var nbKeys = get_parent().get_parent().number_of_keys
-	
+func open():
+	hitbox.queue_free()
+	animation_node.play()
+	pass
 
-# func _on_area_2d_body_exited(body):
-	
+
+func _on_key_picked_up(x, y):
+	open()
