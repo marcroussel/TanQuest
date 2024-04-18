@@ -1,6 +1,14 @@
-[gd_scene load_steps=2 format=3 uid="uid://b2qkffbc7wuyi"]
+[gd_scene load_steps=3 format=3 uid="uid://b2qkffbc7wuyi"]
 
 [ext_resource type="Script" path="res://scripts/sinewave.gd" id="1_xbspq"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1lsq7"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_width_left = 10
+border_width_top = 10
+border_width_right = 10
+border_width_bottom = 10
+border_color = Color(0.129412, 0.129412, 0.129412, 1)
 
 [node name="Osciloscope" type="Node2D"]
 
@@ -10,7 +18,8 @@ offset_top = 61.0
 offset_right = 1153.0
 offset_bottom = 248.0
 
-[node name="target" type="Line2D" parent="."]
+[node name="target" type="Line2D" parent="ColorRect"]
+position = Vector2(0, -61)
 points = PackedVector2Array(1919, -1)
 width = 4.0
 default_color = Color(1, 0, 0, 1)
@@ -25,7 +34,8 @@ number_of_points = 500
 offset_y = 300.0
 space_between_points = 8.0
 
-[node name="player" type="Line2D" parent="."]
+[node name="player" type="Line2D" parent="ColorRect"]
+position = Vector2(0, -61)
 points = PackedVector2Array(1919, -1)
 width = 3.0
 default_color = Color(0, 0, 1, 1)
@@ -39,6 +49,11 @@ amplitude_c = 0.0
 number_of_points = 500
 offset_y = 300.0
 space_between_points = 8.0
+
+[node name="Panel" type="Panel" parent="ColorRect"]
+offset_right = 1156.0
+offset_bottom = 186.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_1lsq7")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(577, 325)
