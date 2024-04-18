@@ -13,7 +13,12 @@ func _ready():
 func _process(delta):
 	pass
 
+# Fonction déclenchée lorsqu'un body entre dans la zone d'Area2D
+func _on_area_2d_body_entered(body):
+	
+	# Importation du nombre de clés du joueur
+	var nbKeys = get_parent().get_parent().number_of_keys
+	
 
-func _on_key_key_picked_up(x, y):
-	if(key_x == x && key_y == y):
-		pass
+# func _on_area_2d_body_exited(body):
+	

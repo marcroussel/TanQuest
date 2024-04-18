@@ -193,7 +193,7 @@ max_acceleration = 5000
 texture_filter = 1
 material = SubResource("ShaderMaterial_xq13j")
 sprite_frames = SubResource("SpriteFrames_57bft")
-animation = &"walk"
+animation = &"run"
 autoplay = "idle"
 
 [node name="PlayerHitbox" type="CollisionShape2D" parent="Player"]
