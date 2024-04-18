@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://c6sg4ncipp0cm"]
+[gd_scene load_steps=21 format=3 uid="uid://c6sg4ncipp0cm"]
 
 [ext_resource type="Script" path="res://scripts/door.gd" id="1_0e3h5"]
 [ext_resource type="Texture2D" uid="uid://cmpcgul6h261k" path="res://art/tanquest_portes.png" id="2_mcm2e"]
@@ -119,6 +119,9 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8eqje"]
 size = Vector2(36, 32)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ek7n3"]
+size = Vector2(42, 32)
+
 [node name="Door" type="Node2D"]
 script = ExtResource("1_0e3h5")
 
@@ -131,3 +134,8 @@ gravity_scale = 0.0
 
 [node name="DoorHitBoxShape" type="CollisionShape2D" parent="DoorHitBox"]
 shape = SubResource("RectangleShape2D_8eqje")
+
+[node name="DoorPlayerDetecrot" type="Area2D" parent="."]
+
+[node name="DoorPlayerDetectorShape" type="CollisionShape2D" parent="DoorPlayerDetecrot"]
+shape = SubResource("RectangleShape2D_ek7n3")
