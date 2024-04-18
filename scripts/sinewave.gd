@@ -23,7 +23,6 @@ extends Line2D
 @export var minimum_value : float = -160
 
 func _process(_delta):
-	
 	var time = Time.get_ticks_msec() * speed
 	var array := []
 	for i in range(number_of_points):

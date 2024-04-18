@@ -1,6 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://b2qkffbc7wuyi"]
+[gd_scene load_steps=6 format=3 uid="uid://b2qkffbc7wuyi"]
 
 [ext_resource type="Script" path="res://scripts/sinewave.gd" id="1_xbspq"]
+[ext_resource type="Shader" path="res://shader/old_tv.gdshader" id="2_4cdlt"]
+[ext_resource type="Script" path="res://scripts/shader_loader.gd" id="3_aigs0"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1lsq7"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
@@ -9,6 +11,10 @@ border_width_top = 10
 border_width_right = 10
 border_width_bottom = 10
 border_color = Color(0.129412, 0.129412, 0.129412, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_mongb"]
+shader = ExtResource("2_4cdlt")
+shader_parameter/scanline_count = 500.0
 
 [node name="Osciloscope" type="Node2D"]
 
@@ -37,7 +43,7 @@ space_between_points = 8.0
 [node name="player" type="Line2D" parent="ColorRect"]
 position = Vector2(0, -61)
 points = PackedVector2Array(1919, -1)
-width = 3.0
+width = 2.0
 default_color = Color(0, 0, 1, 1)
 antialiased = true
 script = ExtResource("1_xbspq")
@@ -57,3 +63,11 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_1lsq7")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(577, 325)
+
+[node name="old_tv_shader" type="ColorRect" parent="Camera2D"]
+material = SubResource("ShaderMaterial_mongb")
+offset_left = -659.0
+offset_top = -397.0
+offset_right = 583.0
+offset_bottom = 367.0
+script = ExtResource("3_aigs0")
