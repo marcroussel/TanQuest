@@ -126,5 +126,8 @@ script = ExtResource("1_0e3h5")
 sprite_frames = SubResource("SpriteFrames_eaxmn")
 animation = &"opening"
 
-[node name="DoorHitBox" type="CollisionShape2D" parent="."]
+[node name="RigidBody2D" type="RigidBody2D" parent="."]
+gravity_scale = 0.0
+
+[node name="DoorHitBox" type="CollisionShape2D" parent="RigidBody2D"]
 shape = SubResource("RectangleShape2D_8eqje")

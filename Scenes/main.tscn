@@ -1385,8 +1385,6 @@ position = Vector2(64, 111)
 
 [node name="FirstRoomDoor" parent="GameTileMap" instance=ExtResource("6_2dcub")]
 position = Vector2(562, 304)
-key_x = 0.0
-key_y = 0.0
 
 [node name="Player" parent="." instance=ExtResource("1_n2d1e")]
 position = Vector2(293, 287)
