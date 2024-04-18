@@ -64,3 +64,8 @@ debug_music_switch={
 2d_physics/layer_3="Key"
 2d_render/enabled=false
 2d_render/size/viewport_width=1920
+
+[rendering]
+
+environment/defaults/default_clear_color=Color(0.301961, 0.301961, 0.301961, 1)
+viewport/defaults/default_clear_color=Color(0.3, 0.3, 0.3, 1)

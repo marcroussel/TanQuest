@@ -57,6 +57,7 @@ offset_y = 300.0
 space_between_points = 8.0
 
 [node name="Panel" type="Panel" parent="ColorRect"]
+layout_mode = 0
 offset_right = 1156.0
 offset_bottom = 186.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_1lsq7")
