@@ -1,7 +1,8 @@
-[gd_scene load_steps=21 format=3 uid="uid://c6sg4ncipp0cm"]
+[gd_scene load_steps=22 format=3 uid="uid://c6sg4ncipp0cm"]
 
 [ext_resource type="Script" path="res://scripts/door.gd" id="1_0e3h5"]
 [ext_resource type="Texture2D" uid="uid://cmpcgul6h261k" path="res://art/tanquest_portes.png" id="2_mcm2e"]
+[ext_resource type="LabelSettings" uid="uid://byof7d5uuy7vi" path="res://settings/tanQuest_label_settings.tres" id="3_cs233"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_18l6a"]
 atlas = ExtResource("2_mcm2e")
@@ -139,6 +140,16 @@ shape = SubResource("RectangleShape2D_8eqje")
 
 [node name="DoorPlayerDetectorShape" type="CollisionShape2D" parent="DoorPlayerDetector"]
 shape = SubResource("RectangleShape2D_ek7n3")
+
+[node name="CommandLabel" type="Label" parent="."]
+offset_left = -71.0
+offset_top = -43.0
+offset_right = 72.0
+offset_bottom = -17.0
+text = " [A] Inspect  "
+label_settings = ExtResource("3_cs233")
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [connection signal="body_shape_entered" from="DoorPlayerDetector" to="." method="_on_player_detected"]
 [connection signal="body_shape_exited" from="DoorPlayerDetector" to="." method="_on_player_leaving"]
