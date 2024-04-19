@@ -135,7 +135,10 @@ gravity_scale = 0.0
 [node name="DoorHitBoxShape" type="CollisionShape2D" parent="DoorHitBox"]
 shape = SubResource("RectangleShape2D_8eqje")
 
-[node name="DoorPlayerDetecrot" type="Area2D" parent="."]
+[node name="DoorPlayerDetector" type="Area2D" parent="."]
 
-[node name="DoorPlayerDetectorShape" type="CollisionShape2D" parent="DoorPlayerDetecrot"]
+[node name="DoorPlayerDetectorShape" type="CollisionShape2D" parent="DoorPlayerDetector"]
 shape = SubResource("RectangleShape2D_ek7n3")
+
+[connection signal="body_shape_entered" from="DoorPlayerDetector" to="." method="_on_player_detected"]
+[connection signal="body_shape_exited" from="DoorPlayerDetector" to="." method="_on_player_leaving"]

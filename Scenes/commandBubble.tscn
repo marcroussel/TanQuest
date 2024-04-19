@@ -1,23 +1,14 @@
-[gd_scene load_steps=2 format=3 uid="uid://b2ybl0sr2868d"]
+[gd_scene load_steps=3 format=3 uid="uid://b2ybl0sr2868d"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ea0ix"]
-bg_color = Color(1, 0.945098, 0.752941, 1)
-border_width_left = 2
-border_width_top = 2
-border_width_right = 2
-border_width_bottom = 2
-border_color = Color(0, 0, 0, 1)
+[ext_resource type="StyleBox" uid="uid://cqutxad1uwxdu" path="res://settings/tanQuest_command_bubble_settings.tres" id="1_iqbby"]
+[ext_resource type="LabelSettings" uid="uid://byof7d5uuy7vi" path="res://settings/tanQuest_label_settings.tres" id="1_ysx6u"]
 
-[node name="CommandBubble" type="Control"]
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="PanelContainer" type="PanelContainer" parent="."]
-layout_mode = 0
+[node name="CommandBubble" type="PanelContainer"]
 offset_right = 40.0
 offset_bottom = 40.0
-theme_override_styles/panel = SubResource("StyleBoxFlat_ea0ix")
+theme_override_styles/panel = ExtResource("1_iqbby")
+
+[node name="CommandLabel" type="Label" parent="."]
+layout_mode = 2
+text = "[A] Command"
+label_settings = ExtResource("1_ysx6u")

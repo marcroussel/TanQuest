@@ -10,7 +10,6 @@ var animation_node:AnimatedSprite2D
 func _ready():
 	hitbox = get_node("DoorHitBox")
 	animation_node = get_node("DoorSprite")
-	pass # Replace with function body.
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -25,3 +24,13 @@ func open():
 
 func _on_key_picked_up(x, y):
 	open()
+
+
+
+# Called when a player has reached the DoorPlayerDetectorShape
+func _on_player_detected(body_rid, body, body_shape_index, local_shape_index):
+	pass
+
+# Called when a player leaves the DoorPlayerDetectorShape
+func _on_player_leaving(body_rid, body, body_shape_index, local_shape_index):
+	pass
