@@ -1,6 +1,7 @@
-[gd_scene load_steps=8 format=3 uid="uid://6dqanu7t47xt"]
+[gd_scene load_steps=9 format=3 uid="uid://6dqanu7t47xt"]
 
 [ext_resource type="Texture2D" uid="uid://bid3lqqw16xg0" path="res://art/tanQuest_border.png" id="1_gu3bx"]
+[ext_resource type="Script" path="res://scripts/enigma_popup.gd" id="1_tbhwa"]
 [ext_resource type="PackedScene" uid="uid://b2qkffbc7wuyi" path="res://Scenes/osciloscope.tscn" id="2_8itii"]
 [ext_resource type="Texture2D" uid="uid://gns1jdinxiw6" path="res://art/tanQuest_cancel_button.png" id="3_vct35"]
 
@@ -35,6 +36,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_tbhwa")
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_qmy8u")
@@ -48,7 +50,7 @@ layer_1/tile_data = PackedInt32Array(131072, 2, 0, 131126, 131074, 0, 196662, 13
 [node name="Osciloscope" parent="." instance=ExtResource("2_8itii")]
 position = Vector2(-1, 22)
 
-[node name="Button" type="Button" parent="."]
+[node name="ExitButton" type="Button" parent="."]
 z_index = 1
 layout_mode = 0
 offset_left = 14.0
@@ -57,3 +59,5 @@ offset_right = 38.0
 offset_bottom = 80.0
 shortcut = SubResource("Shortcut_kcw7f")
 icon = ExtResource("3_vct35")
+
+[connection signal="pressed" from="ExitButton" to="." method="_on_exit_button_pressed"]

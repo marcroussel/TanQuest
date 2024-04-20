@@ -7,6 +7,8 @@ var player_detector:Area2D
 var hitbox:RigidBody2D
 var animation_node:AnimatedSprite2D
 var commandLabel:Label
+var is_player_detected:bool
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -15,10 +17,13 @@ func _ready():
 	animation_node = get_node("DoorSprite")
 	commandLabel = get_node("CommandLabel")
 	commandLabel.hide()
+	is_player_detected = false
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
+# Used to send the signal when the player is detected and the a key is pressed
 func _process(delta):
-	pass
+	if Input.is_action_pressed("general_action") and is_player_detected:
+		print("tacos")
 
 # Function opening the door and removing collision shapes and commandLabel
 func open():
@@ -36,8 +41,15 @@ func _on_key_picked_up(x, y):
 
 # Called when a player has reached the DoorPlayerDetectorShape
 func _on_player_detected(body_rid, body, body_shape_index, local_shape_index):
-	commandLabel.show()
+	if body.name == "Player":
+		print("player_detected")
+		commandLabel.show()
+		is_player_detected = true
 
 # Called when a player leaves the DoorPlayerDetectorShape
 func _on_player_leaving(body_rid, body, body_shape_index, local_shape_index):
-	commandLabel.hide()
+	if body.name == "Player":
+		print("player_exiting")
+		commandLabel.hide()
+		is_player_detected = false
+

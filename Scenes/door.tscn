@@ -137,9 +137,11 @@ gravity_scale = 0.0
 shape = SubResource("RectangleShape2D_8eqje")
 
 [node name="DoorPlayerDetector" type="Area2D" parent="."]
+collision_layer = 4
 
 [node name="DoorPlayerDetectorShape" type="CollisionShape2D" parent="DoorPlayerDetector"]
 shape = SubResource("RectangleShape2D_ek7n3")
+debug_color = Color(0, 0.6, 0.701961, 0.419608)
 
 [node name="CommandLabel" type="Label" parent="."]
 offset_left = -71.0

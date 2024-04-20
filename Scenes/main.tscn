@@ -1393,7 +1393,7 @@ light_size = 0.7
 light_variation_size = 0.1
 
 [node name="Player" parent="." instance=ExtResource("1_n2d1e")]
-position = Vector2(293, 287)
+position = Vector2(290, 302)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_4edct")
