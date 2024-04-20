@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://6dqanu7t47xt"]
+[gd_scene load_steps=9 format=3 uid="uid://6dqanu7t47xt"]
 
 [ext_resource type="Texture2D" uid="uid://bid3lqqw16xg0" path="res://art/tanQuest_border.png" id="1_gu3bx"]
 [ext_resource type="Script" path="res://scripts/enigma_popup.gd" id="1_tbhwa"]
@@ -21,6 +21,13 @@ texture_region_size = Vector2i(21, 21)
 [sub_resource type="TileSet" id="TileSet_qmy8u"]
 tile_size = Vector2i(21, 21)
 sources/2 = SubResource("TileSetAtlasSource_l13pr")
+
+[sub_resource type="InputEventKey" id="InputEventKey_qc6fb"]
+device = -1
+keycode = 4194305
+
+[sub_resource type="Shortcut" id="Shortcut_2b11n"]
+events = [SubResource("InputEventKey_qc6fb")]
 
 [node name="EnigmaPopup" type="Control"]
 layout_mode = 3
@@ -45,6 +52,9 @@ position = Vector2(-1, 22)
 
 [node name="ExitButton" type="Button" parent="."]
 layout_mode = 0
-offset_right = 8.0
-offset_bottom = 8.0
+offset_left = 18.0
+offset_top = 59.0
+offset_right = 42.0
+offset_bottom = 83.0
+shortcut = SubResource("Shortcut_2b11n")
 icon = ExtResource("3_vct35")
