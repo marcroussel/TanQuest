@@ -13,6 +13,7 @@ signal key_touched(target : Area2D)
 @export var input_right : String = "move_right"
 ## Name of input action to jump.
 @export var input_jump : String = "jump"
+@export var freezed = false # Defines wether the player can move or not
 @export var animation_node : AnimatedSprite2D
 @export var zero_threshold : float = 0.2
 @export var jump_sound_effect : AudioStreamPlayer2D
@@ -144,19 +145,19 @@ func _ready():
 
 func _input(_event):
 	acc.x = 0
-	if Input.is_action_pressed(input_left):
+	if Input.is_action_pressed(input_left) and not freezed:
 		acc.x = -max_acceleration
 	
-	if Input.is_action_pressed(input_right):
+	if Input.is_action_pressed(input_right) and not freezed:
 		acc.x = max_acceleration
 	
-	if Input.is_action_just_pressed(input_jump):
+	if Input.is_action_just_pressed(input_jump) and not freezed:
 		holding_jump = true
 		start_jump_buffer_timer()
 		if (not can_hold_jump and can_ground_jump()) or can_double_jump():
 			jump()
 		
-	if Input.is_action_just_released(input_jump):
+	if Input.is_action_just_released(input_jump) and not freezed:
 		holding_jump = false
 		
 	if Input.is_action_just_pressed("debug_music_switch"):
@@ -179,7 +180,7 @@ func _physics_process(delta):
 	
 	
 	# Cannot do this in _input because it needs to be checked every frame
-	if Input.is_action_pressed(input_jump):
+	if Input.is_action_pressed(input_jump) and not freezed:
 		if can_ground_jump() and can_hold_jump:
 			jump()
 	

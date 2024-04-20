@@ -37,6 +37,8 @@ func _on_first_room_door_create_enigma_popup():
 		# Hiding main node's elements
 		$GameTileMap.hide()
 		$Player.hide()
+		$Player/Player.freezed = true
+		
 		is_popup_created = true
 
 
@@ -46,6 +48,7 @@ func _on_popup_destroyed():
 	# Showing main node's elements
 	$GameTileMap.show()
 	$Player.show()
+	$Player/Player.freezed = false
 	
 	is_popup_created = false
 	
