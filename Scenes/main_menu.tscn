@@ -1,0 +1,94 @@
+[gd_scene load_steps=8 format=3 uid="uid://qkjcnppmijr2"]
+
+[ext_resource type="Texture2D" uid="uid://d346vijbn1soc" path="res://tanQuestLogo.svg" id="1_8hsm3"]
+[ext_resource type="Script" path="res://scripts/main_menu.gd" id="1_ixnt2"]
+[ext_resource type="FontFile" uid="uid://fyed4573i087" path="res://fonts/8bitlim.ttf" id="2_lr5ds"]
+[ext_resource type="FontFile" uid="uid://bb4qws2xp060x" path="res://fonts/Jersey10Charted-Regular.ttf" id="3_lugcq"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_yfgk2"]
+font = ExtResource("2_lr5ds")
+font_size = 72
+outline_size = 18
+outline_color = Color(0, 0, 0, 1)
+shadow_size = 5
+shadow_color = Color(0.164706, 0.164706, 0.164706, 1)
+shadow_offset = Vector2(6, 6)
+
+[sub_resource type="LabelSettings" id="LabelSettings_m44vq"]
+font = ExtResource("2_lr5ds")
+font_size = 48
+font_color = Color(0.768627, 0.141176, 0.101961, 1)
+outline_size = 12
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="Theme" id="Theme_dadn3"]
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ixnt2")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 128.0
+grow_horizontal = 2
+theme_override_constants/margin_top = 36
+
+[node name="LogoContainer" type="HBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="TanQuestLogo" type="TextureRect" parent="MarginContainer/LogoContainer"]
+layout_mode = 2
+texture = ExtResource("1_8hsm3")
+
+[node name="TextVContainer" type="VBoxContainer" parent="MarginContainer/LogoContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="TanQuestLabel" type="Label" parent="MarginContainer/LogoContainer/TextVContainer"]
+layout_mode = 2
+text = "TanQuest"
+label_settings = SubResource("LabelSettings_yfgk2")
+
+[node name="VersionLabel" type="Label" parent="MarginContainer/LogoContainer/TextVContainer"]
+layout_mode = 2
+text = "Demo"
+label_settings = SubResource("LabelSettings_m44vq")
+
+[node name="StartButton" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -4.0
+offset_top = -4.0
+offset_right = 4.0
+offset_bottom = 4.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme = SubResource("Theme_dadn3")
+theme_override_fonts/font = ExtResource("3_lugcq")
+theme_override_font_sizes/font_size = 72
+text = "Start"
+
+[node name="MainMenuCamera" type="Camera2D" parent="."]
+position = Vector2(576, 324)
