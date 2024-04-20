@@ -1,9 +1,10 @@
-[gd_scene load_steps=15 format=3 uid="uid://b5agf11t0s5ow"]
+[gd_scene load_steps=16 format=3 uid="uid://b5agf11t0s5ow"]
 
 [ext_resource type="Texture2D" uid="uid://br11u3wm2wjao" path="res://art/medival_tilemap.png" id="1_as5sc"]
 [ext_resource type="Script" path="res://scripts/main.gd" id="1_hpge4"]
 [ext_resource type="PackedScene" uid="uid://d2m61ragmhdyj" path="res://Scenes/player.tscn" id="1_n2d1e"]
 [ext_resource type="Texture2D" uid="uid://cplu6jda6qqh" path="res://art/goodly-2x.png" id="1_x6swu"]
+[ext_resource type="PackedScene" uid="uid://6dqanu7t47xt" path="res://Scenes/enigma_popup.tscn" id="2_0tbal"]
 [ext_resource type="Texture2D" uid="uid://b5d27i76s23nv" path="res://art/tanquest_mobs_and_objects_16x16.png" id="3_1hcyj"]
 [ext_resource type="PackedScene" uid="uid://cysls2ocm82nk" path="res://Scenes/key.tscn" id="5_feh86"]
 [ext_resource type="PackedScene" uid="uid://c6sg4ncipp0cm" path="res://Scenes/door.tscn" id="6_2dcub"]
@@ -1369,6 +1370,7 @@ exposure_multiplier = 0.25
 
 [node name="Main" type="Node"]
 script = ExtResource("1_hpge4")
+enigma_popup = ExtResource("2_0tbal")
 
 [node name="GameTileMap" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_mh06x")
@@ -1401,3 +1403,4 @@ camera_attributes = SubResource("CameraAttributesPractical_cfor4")
 
 [connection signal="key_picked_up" from="GameTileMap/FirstRoomKey" to="." method="_on_key_picked_up"]
 [connection signal="key_picked_up" from="GameTileMap/FirstRoomKey" to="GameTileMap/FirstRoomDoor" method="_on_key_picked_up"]
+[connection signal="create_enigma_popup" from="GameTileMap/FirstRoomDoor" to="." method="_on_first_room_door_create_enigma_popup"]

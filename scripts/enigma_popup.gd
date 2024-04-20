@@ -1,11 +1,12 @@
 extends Control
 
 class_name EnigmaPopup
-var exit_button:Button
+
+signal popup_destroyed
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	exit_button = get_node("ExitButton")
+	pass
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -15,4 +16,6 @@ func _process(delta):
 
 # Called when the exit button (or Esc key) is pressed
 func _on_exit_button_pressed():
-	pass
+	print("popup detruit")
+	popup_destroyed.emit()
+	queue_free()
