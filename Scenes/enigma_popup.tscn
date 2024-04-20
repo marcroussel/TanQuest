@@ -58,3 +58,8 @@ offset_right = 42.0
 offset_bottom = 83.0
 shortcut = SubResource("Shortcut_2b11n")
 icon = ExtResource("3_vct35")
+
+[node name="DirectionalLight2D" type="DirectionalLight2D" parent="."]
+energy = 0.73
+
+[connection signal="pressed" from="ExitButton" to="." method="_on_exit_button_pressed"]
