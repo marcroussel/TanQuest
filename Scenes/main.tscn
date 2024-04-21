@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://b5agf11t0s5ow"]
+[gd_scene load_steps=17 format=3 uid="uid://b5agf11t0s5ow"]
 
 [ext_resource type="Texture2D" uid="uid://br11u3wm2wjao" path="res://art/medival_tilemap.png" id="1_as5sc"]
 [ext_resource type="Script" path="res://scripts/main.gd" id="1_hpge4"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://cysls2ocm82nk" path="res://Scenes/key.tscn" id="5_feh86"]
 [ext_resource type="PackedScene" uid="uid://c6sg4ncipp0cm" path="res://Scenes/door.tscn" id="6_2dcub"]
 [ext_resource type="PackedScene" uid="uid://csu0tdie21hfx" path="res://Scenes/torch.tscn" id="8_n8scy"]
+[ext_resource type="Script" path="res://scripts/main_menu.gd" id="10_1g3oo"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_leq6i"]
 resource_name = "MedievalAtlas"
@@ -1400,6 +1401,13 @@ position = Vector2(290, 302)
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_4edct")
 camera_attributes = SubResource("CameraAttributesPractical_cfor4")
+
+[node name="MainMenu" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("10_1g3oo")
 
 [connection signal="key_picked_up" from="GameTileMap/FirstRoomKey" to="." method="_on_key_picked_up"]
 [connection signal="key_picked_up" from="GameTileMap/FirstRoomKey" to="GameTileMap/FirstRoomDoor" method="_on_key_picked_up"]

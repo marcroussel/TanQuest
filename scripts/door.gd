@@ -46,14 +46,12 @@ func _on_key_picked_up(x, y):
 # Called when a player has reached the DoorPlayerDetectorShape
 func _on_player_detected(body_rid, body, body_shape_index, local_shape_index):
 	if body.name == "Player":
-		print("player_detected")
 		commandLabel.show()
 		is_player_detected = true
 
 # Called when a player leaves the DoorPlayerDetectorShape
 func _on_player_leaving(body_rid, body, body_shape_index, local_shape_index):
 	if body.name == "Player":
-		print("player_exiting")
 		commandLabel.hide()
 		is_player_detected = false
 

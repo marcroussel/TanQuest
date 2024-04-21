@@ -13,7 +13,7 @@ signal key_touched(target : Area2D)
 @export var input_right : String = "move_right"
 ## Name of input action to jump.
 @export var input_jump : String = "jump"
-@export var freezed = false # Defines wether the player can move or not
+@export var freezed = true # Defines wether the player can move or not
 @export var animation_node : AnimatedSprite2D
 @export var zero_threshold : float = 0.2
 @export var jump_sound_effect : AudioStreamPlayer2D

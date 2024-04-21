@@ -2,12 +2,14 @@ extends Node
 
 @export var number_of_keys:int = 0
 @export var enigma_popup:PackedScene
+@export var main_menu:MainMenu
 
 var is_popup_created = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+	main_menu = get_node("MainMenu")
+	main_menu.main_menu_camera.set_current()
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
