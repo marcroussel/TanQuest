@@ -201,14 +201,14 @@ visible = false
 position = Vector2(0, 1)
 shape = SubResource("RectangleShape2D_pu4hu")
 
-[node name="Camera2D" type="Camera2D" parent="Player"]
+[node name="PlayerCamera" type="Camera2D" parent="Player"]
 offset = Vector2(0, -20)
 zoom = Vector2(2, 2)
 position_smoothing_enabled = true
 position_smoothing_speed = 10.0
 editor_draw_drag_margin = true
 
-[node name="old_tv_shader" type="ColorRect" parent="Player/Camera2D"]
+[node name="old_tv_shader" type="ColorRect" parent="Player/PlayerCamera"]
 visible = false
 material = SubResource("ShaderMaterial_uxpdf")
 offset_left = -618.0

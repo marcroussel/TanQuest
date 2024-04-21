@@ -16,6 +16,5 @@ func _process(delta):
 
 # Called when the exit button (or Esc key) is pressed
 func _on_exit_button_pressed():
-	print("popup detruit")
 	popup_destroyed.emit()
 	queue_free()

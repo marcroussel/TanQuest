@@ -1,6 +1,9 @@
 extends Control
 
 class_name MainMenu
+
+signal start_game # Signal to emit when the game starts
+
 var main_menu_camera:Camera2D
 
 # Called when the node enters the scene tree for the first time.
@@ -13,3 +16,7 @@ func _ready():
 func _process(delta):
 	pass
 
+
+# Called when the start button has been pressed
+func _on_start_button_pressed():
+	start_game.emit()
