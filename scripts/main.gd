@@ -2,14 +2,25 @@ extends Node
 
 @export var number_of_keys:int = 0
 @export var enigma_popup:PackedScene
-@export var main_menu:MainMenu
+var main_menu:MainMenu
+var game_tile_map:TileMap
+var player:Node2D
 
 var is_popup_created = false
 
-# Called when the node enters the scene tree for the first time.
+# Called at the begining of the whole program
 func _ready():
+	# Importing every node needed
 	main_menu = get_node("MainMenu")
-	main_menu.main_menu_camera.set_current()
+	game_tile_map = get_node("GameTileMap")
+	player = get_node("Player")
+	
+	# Hiding player and GameTile and showing MainMenu
+	game_tile_map.hide()
+	player.hide()
+	
+	# Switching to main_menu_camera
+	main_menu.main_menu_camera.make_current()
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

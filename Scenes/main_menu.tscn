@@ -92,3 +92,5 @@ text = "Start"
 
 [node name="MainMenuCamera" type="Camera2D" parent="."]
 position = Vector2(576, 324)
+
+[node name="DirectionalLight2D" type="DirectionalLight2D" parent="."]
