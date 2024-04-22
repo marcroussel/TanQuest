@@ -91,7 +91,7 @@ theme_override_font_sizes/font_size = 72
 text = "Start"
 
 [node name="MainMenuCamera" type="Camera2D" parent="."]
-position = Vector2(576, 324)
+position = Vector2(963, 543)
 
 [node name="DirectionalLight2D" type="DirectionalLight2D" parent="."]
 
