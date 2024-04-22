@@ -15,6 +15,6 @@ func _ready():
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
+func _process(_delta):
 	light_source.set_texture_scale(light_size + (sin(animation_timer.frame*(PI/2)))*light_variation_size)
 	pass

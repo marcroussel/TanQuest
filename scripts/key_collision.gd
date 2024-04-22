@@ -11,5 +11,5 @@ func _process(delta):
 	pass
 
 
-func _on_area_entered(area):
+func _on_area_entered(_area):
 	self.queue_free()

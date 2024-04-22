@@ -1406,5 +1406,4 @@ camera_attributes = SubResource("CameraAttributesPractical_cfor4")
 visible = false
 
 [connection signal="key_picked_up" from="GameTileMap/FirstRoomKey" to="." method="_on_key_picked_up"]
-[connection signal="key_picked_up" from="GameTileMap/FirstRoomKey" to="GameTileMap/FirstRoomDoor" method="_on_key_picked_up"]
 [connection signal="create_enigma_popup" from="GameTileMap/FirstRoomDoor" to="." method="_on_first_room_door_create_enigma_popup"]

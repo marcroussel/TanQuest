@@ -1,5 +1,7 @@
 extends Line2D
 
+class_name SineWave
+
 @export_category("Frequencies")
 @export var frequency_a : float = 1
 @export var frequency_b : float = 1
@@ -11,9 +13,9 @@ extends Line2D
 @export var amplitude_c : float = 50
 
 @export_category("Other")
-@export var number_of_points : int = 750
-@export var offset_x : float = 0
-@export var offset_y : float = 200
+@export var number_of_points : int = 280
+@export var offset_x : float = 40
+@export var offset_y : float = 310
 @export var space_between_points : float = 3
 @export var scale_line : float = 0.5
 @export var speed : float = -0.1

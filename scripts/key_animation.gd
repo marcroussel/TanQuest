@@ -21,7 +21,7 @@ func _process(_delta):
 
 
 
-func _on_key_collision_area_entered(area):
+func _on_key_collision_area_entered(_area):
 	animation_node.play("picked_up")
 	key_sound.play(0.0)
 	light.queue_free()

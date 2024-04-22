@@ -1,6 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://b2qkffbc7wuyi"]
+[gd_scene load_steps=5 format=3 uid="uid://b2qkffbc7wuyi"]
 
+[ext_resource type="Script" path="res://scripts/osciloscope.gd" id="1_0806j"]
 [ext_resource type="Script" path="res://scripts/sinewave.gd" id="1_xbspq"]
+[ext_resource type="FontFile" uid="uid://fyed4573i087" path="res://fonts/8bitlim.ttf" id="3_lpppq"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1lsq7"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
@@ -10,7 +12,10 @@ border_width_right = 10
 border_width_bottom = 10
 border_color = Color(0.129412, 0.129412, 0.129412, 1)
 
-[node name="Osciloscope" type="Node2D"]
+[node name="Osciloscope" type="Node2D" node_paths=PackedStringArray("player", "target")]
+script = ExtResource("1_0806j")
+player = NodePath("ColorRect/player")
+target = NodePath("ColorRect/target")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 self_modulate = Color(0, 0, 0, 1)
@@ -30,8 +35,6 @@ frequency_c = 3.0
 amplitude_a = 90.0
 amplitude_b = 90.0
 amplitude_c = 0.0
-number_of_points = 500
-offset_y = 310.0
 space_between_points = 8.0
 maximum_value = 160.0
 
@@ -47,8 +50,6 @@ frequency_c = 3.0
 amplitude_a = 0.0
 amplitude_b = 0.0
 amplitude_c = 0.0
-number_of_points = 500
-offset_y = 310.0
 space_between_points = 8.0
 maximum_value = 160.0
 
@@ -60,3 +61,50 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_1lsq7")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(577, 325)
+
+[node name="ButtonsA" type="Node2D" parent="."]
+position = Vector2(90, 308)
+
+[node name="AddA" type="Button" parent="ButtonsA"]
+offset_top = -42.0
+offset_right = 50.0
+offset_bottom = 8.0
+theme_override_fonts/font = ExtResource("3_lpppq")
+theme_override_font_sizes/font_size = 25
+text = "+"
+
+[node name="RemoveA" type="Button" parent="ButtonsA"]
+offset_top = 43.0
+offset_right = 50.0
+offset_bottom = 93.0
+theme_override_fonts/font = ExtResource("3_lpppq")
+theme_override_font_sizes/font_size = 25
+text = "-"
+
+[node name="ButtonsB" type="Node2D" parent="."]
+position = Vector2(270, 308)
+
+[node name="AddB" type="Button" parent="ButtonsB"]
+offset_top = -42.0
+offset_right = 50.0
+offset_bottom = 8.0
+theme_override_fonts/font = ExtResource("3_lpppq")
+theme_override_font_sizes/font_size = 25
+text = "+"
+
+[node name="RemoveB" type="Button" parent="ButtonsB"]
+offset_top = 43.0
+offset_right = 50.0
+offset_bottom = 93.0
+theme_override_fonts/font = ExtResource("3_lpppq")
+theme_override_font_sizes/font_size = 25
+text = "-"
+
+[connection signal="button_down" from="ButtonsA/AddA" to="." method="_start_add_a"]
+[connection signal="button_up" from="ButtonsA/AddA" to="." method="reset_state_a"]
+[connection signal="button_down" from="ButtonsA/RemoveA" to="." method="_start_remove_a"]
+[connection signal="button_up" from="ButtonsA/RemoveA" to="." method="reset_state_a"]
+[connection signal="button_down" from="ButtonsB/AddB" to="." method="_start_add_b"]
+[connection signal="button_up" from="ButtonsB/AddB" to="." method="reset_state_b"]
+[connection signal="button_down" from="ButtonsB/RemoveB" to="." method="_start_remove_b"]
+[connection signal="button_up" from="ButtonsB/RemoveB" to="." method="reset_state_b"]

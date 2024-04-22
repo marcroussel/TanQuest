@@ -68,6 +68,7 @@ func _on_first_room_door_create_enigma_popup():
 		
 		# Generating the first enigma popup
 		var first_enigma = enigma_popup.instantiate()
+		first_enigma.load(number_of_keys,90,90,0)
 		first_enigma.position = $Player.position
 		add_child(first_enigma)
 		first_enigma.show()
