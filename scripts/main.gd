@@ -2,33 +2,29 @@ extends Node
 
 const DEFAULT_PLAYER_POSITION_X = 290
 const DEFAULT_PLAYER_POSITION_Y = 304
+const DEFAULT_PLAYER_CAMERA_ZOOM = 3
 
 @export var number_of_keys:int = 0
 @export var enigma_popup:PackedScene
-var main_menu:MainMenu
-var game_tile_map:TileMap
 
 var is_popup_created = false
 
 # Called at the begining of the whole program
 func _ready():
-	# Importing every node needed
-	main_menu = get_node("MainMenu")
-	game_tile_map = get_node("GameTileMap")
 	
 	# Hiding player and GameTile and showing MainMenu
-	game_tile_map.hide()
+	$GameTileMap.hide()
 	$Player.hide()
-	main_menu.show()
+	$MainMenu.show()
 	
 	# We freeze the player
 	$Player/Player.freezed = true
 	
 	# Switching to main_menu_camera
-	main_menu.main_menu_camera.make_current()
+	$MainMenu.main_menu_camera.make_current()
 	
 	# Connecting the start_game signal to start_game function
-	main_menu.start_game.connect(start_game)
+	$MainMenu.start_game.connect(start_game)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -49,9 +45,9 @@ func start_game():
 	set_default_player_position()
 	
 	# Showing player and GameTile and hiding MainMenu
-	game_tile_map.show()
+	$GameTileMap.show()
 	$Player.show()
-	main_menu.hide()
+	$MainMenu.hide()
 	
 	# We unfreeze the player
 	$Player/Player.freezed = false
@@ -72,6 +68,7 @@ func _on_first_room_door_create_enigma_popup():
 		
 		# Generating the first enigma popup
 		var first_enigma = enigma_popup.instantiate()
+		first_enigma.position = $Player.position
 		add_child(first_enigma)
 		first_enigma.show()
 		
@@ -82,6 +79,9 @@ func _on_first_room_door_create_enigma_popup():
 		$GameTileMap.hide()
 		$Player.hide()
 		$Player/Player.freezed = true
+		
+		# Reducing PlayerCamera's zoom
+		$Player/Player/PlayerCamera.zoom = Vector2(2,2)
 		
 		is_popup_created = true
 
@@ -94,5 +94,7 @@ func _on_popup_destroyed():
 	$Player.show()
 	$Player/Player.freezed = false
 	
-	is_popup_created = false
+	# Returning to PlayerCamera's default zoom
+	$Player/Player/PlayerCamera.zoom = Vector2(DEFAULT_PLAYER_CAMERA_ZOOM,DEFAULT_PLAYER_CAMERA_ZOOM)
 	
+	is_popup_created = false
