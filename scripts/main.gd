@@ -11,6 +11,18 @@ var is_popup_created = false
 
 # Called at the begining of the whole program
 func _ready():
+	# We make the start menu appear
+	start_main_menu()
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta):
+	pass
+
+
+
+# Used to make the main menu appear
+func start_main_menu():
 	
 	# Hiding player and GameTile and showing MainMenu
 	$GameTileMap.hide()
@@ -25,15 +37,9 @@ func _ready():
 	
 	# Connecting the start_game signal to start_game function
 	$MainMenu.start_game.connect(start_game)
+	
+	$HUD.hide()
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
-
-# Used to set the player at the default begin position
-func set_default_player_position():
-	$Player.position = Vector2(DEFAULT_PLAYER_POSITION_X, DEFAULT_PLAYER_POSITION_Y)
 
 ## ---------- EVENT PROCEDURES ---------- ##
 
@@ -42,18 +48,21 @@ func set_default_player_position():
 func start_game():
 	
 	# Setting the default player's position
-	set_default_player_position()
+	$Player.position = Vector2(DEFAULT_PLAYER_POSITION_X, DEFAULT_PLAYER_POSITION_Y)
 	
 	# Showing player and GameTile and hiding MainMenu
 	$GameTileMap.show()
 	$Player.show()
 	$MainMenu.hide()
 	
+	
 	# We unfreeze the player
 	$Player/Player.freezed = false
 	
 	# Switching to player's camera
 	$Player/Player/PlayerCamera.make_current()
+	
+	$HUD.show()
 
 
 # Called when a key has been picked up
