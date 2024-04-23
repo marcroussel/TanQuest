@@ -17,6 +17,10 @@ run/max_fps=60
 boot_splash/image="res://tanQuestLogo.png"
 config/icon="res://tanQuestLogo.svg"
 
+[autoload]
+
+Hud="*res://Scenes/hud.tscn"
+
 [display]
 
 window/size/viewport_width=1920

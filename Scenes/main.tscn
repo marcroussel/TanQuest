@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://b5agf11t0s5ow"]
+[gd_scene load_steps=18 format=3 uid="uid://b5agf11t0s5ow"]
 
 [ext_resource type="Texture2D" uid="uid://br11u3wm2wjao" path="res://art/medival_tilemap.png" id="1_as5sc"]
 [ext_resource type="Script" path="res://scripts/main.gd" id="1_hpge4"]
@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://c6sg4ncipp0cm" path="res://Scenes/door.tscn" id="6_2dcub"]
 [ext_resource type="PackedScene" uid="uid://csu0tdie21hfx" path="res://Scenes/torch.tscn" id="8_n8scy"]
 [ext_resource type="PackedScene" uid="uid://qkjcnppmijr2" path="res://Scenes/main_menu.tscn" id="10_cb0a7"]
+[ext_resource type="PackedScene" uid="uid://cexrh5iwp7fku" path="res://Scenes/hud.tscn" id="11_7jbsv"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_leq6i"]
 resource_name = "MedievalAtlas"
@@ -1404,6 +1405,8 @@ camera_attributes = SubResource("CameraAttributesPractical_cfor4")
 
 [node name="MainMenu" parent="." instance=ExtResource("10_cb0a7")]
 visible = false
+
+[node name="HUD" parent="." instance=ExtResource("11_7jbsv")]
 
 [connection signal="key_picked_up" from="GameTileMap/FirstRoomKey" to="." method="_on_key_picked_up"]
 [connection signal="create_enigma_popup" from="GameTileMap/FirstRoomDoor" to="." method="_on_first_room_door_create_enigma_popup"]

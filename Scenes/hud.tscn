@@ -1,0 +1,22 @@
+[gd_scene load_steps=5 format=3 uid="uid://cexrh5iwp7fku"]
+
+[ext_resource type="Texture2D" uid="uid://bil4jqq41aw43" path="res://art/tanQuest_pause_button.png" id="1_j4wn2"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_87efj"]
+
+[sub_resource type="InputEventKey" id="InputEventKey_wko28"]
+device = -1
+keycode = 4194305
+
+[sub_resource type="Shortcut" id="Shortcut_7mora"]
+events = [SubResource("InputEventKey_wko28")]
+
+[node name="HUD" type="CanvasLayer"]
+
+[node name="Button" type="Button" parent="."]
+offset_right = 24.0
+offset_bottom = 24.0
+scale = Vector2(2, 2)
+theme_override_styles/focus = SubResource("StyleBoxEmpty_87efj")
+shortcut = SubResource("Shortcut_7mora")
+icon = ExtResource("1_j4wn2")
