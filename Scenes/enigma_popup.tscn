@@ -34,9 +34,9 @@ script = ExtResource("1_tbhwa")
 osciloscope = NodePath("Osciloscope")
 
 [node name="ColorRect" type="ColorRect" parent="."]
-offset_right = 1916.0
-offset_bottom = 1076.0
-color = Color(0, 0, 0, 0.603922)
+offset_right = 1921.0
+offset_bottom = 1081.0
+color = Color(0, 0, 0, 0.941176)
 
 [node name="TileMap" type="TileMap" parent="."]
 position = Vector2(950, 474)
@@ -53,10 +53,10 @@ position = Vector2(382, 218)
 
 [node name="ExitButton" type="Button" parent="."]
 z_index = 1
-offset_left = 469.0
-offset_top = 256.0
-offset_right = 493.0
-offset_bottom = 280.0
+offset_left = 398.0
+offset_top = 253.0
+offset_right = 422.0
+offset_bottom = 277.0
 shortcut = SubResource("Shortcut_2b11n")
 icon = ExtResource("3_vct35")
 

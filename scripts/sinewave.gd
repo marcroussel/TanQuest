@@ -25,18 +25,21 @@ class_name SineWave
 @export var minimum_value : float = -160
 
 func _process(_delta):
-	var time = Time.get_ticks_msec() * speed
-	var array := []
-	for i in range(number_of_points):
-		var sin_value : float
-		sin_value = (sin(frequency_a*0.01*((offset_x+float(i)*space_between_points)+time))*amplitude_a+
-		sin(frequency_b*0.01*((offset_x+float(i)*space_between_points)+time))*amplitude_b+
-		sin(frequency_c*0.01*((offset_x+float(i)*space_between_points)+time))*amplitude_c
-		)
-		if(sin_value>maximum_value):
-			sin_value = maximum_value
-		if(sin_value<minimum_value):
-			sin_value= minimum_value
-		array.append(Vector2((offset_x+float(i)*space_between_points)*scale_line, 
-		(offset_y+sin_value)*scale_line))
-	points = array
+	if(get_parent().visible):
+		var time = Time.get_ticks_msec() * speed
+		var array := []
+		for i in range(number_of_points):
+			var sin_value : float
+			sin_value = (sin(frequency_a*0.01*((offset_x+float(i)*space_between_points)+time))*amplitude_a+
+			sin(frequency_b*0.01*((offset_x+float(i)*space_between_points)+time))*amplitude_b+
+			sin(frequency_c*0.01*((offset_x+float(i)*space_between_points)+time))*amplitude_c
+			)
+			if(sin_value>maximum_value):
+				sin_value = maximum_value
+			if(sin_value<minimum_value):
+				sin_value= minimum_value
+			array.append(Vector2((offset_x+float(i)*space_between_points)*scale_line, 
+			(offset_y+sin_value)*scale_line))
+		points = array
+	else:
+		points = []
