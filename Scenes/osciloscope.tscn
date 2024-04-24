@@ -152,6 +152,7 @@ text = "-"
 metadata/_edit_use_anchors_ = true
 
 [node name="DeactivateC" type="Label" parent="ButtonsC"]
+visible = false
 offset_left = -9.0
 offset_top = -51.0
 offset_right = 92.0
@@ -172,3 +173,7 @@ metadata/_edit_use_anchors_ = true
 [connection signal="button_up" from="ButtonsB/AddB" to="." method="reset_state_b"]
 [connection signal="button_down" from="ButtonsB/RemoveB" to="." method="_start_remove_b"]
 [connection signal="button_up" from="ButtonsB/RemoveB" to="." method="reset_state_b"]
+[connection signal="button_down" from="ButtonsC/AddC" to="." method="_start_add_c"]
+[connection signal="button_up" from="ButtonsC/AddC" to="." method="reset_state_c"]
+[connection signal="button_down" from="ButtonsC/RemoveC" to="." method="_start_remove_c"]
+[connection signal="button_up" from="ButtonsC/RemoveC" to="." method="reset_state_c"]
