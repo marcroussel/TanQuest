@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://qkjcnppmijr2"]
+[gd_scene load_steps=12 format=3 uid="uid://qkjcnppmijr2"]
 
 [ext_resource type="Texture2D" uid="uid://d346vijbn1soc" path="res://tanQuestLogo.svg" id="1_8hsm3"]
 [ext_resource type="Script" path="res://scripts/main_menu.gd" id="1_ixnt2"]
@@ -7,8 +7,6 @@
 [ext_resource type="FontFile" uid="uid://bb4qws2xp060x" path="res://fonts/Jersey10Charted-Regular.ttf" id="3_lugcq"]
 [ext_resource type="Shader" path="res://shader/old_tv.gdshader" id="3_yxmen"]
 [ext_resource type="Script" path="res://scripts/sinewave.gd" id="7_84l3h"]
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_8lxh1"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_2xpyc"]
 shader = ExtResource("3_yxmen")
@@ -42,7 +40,6 @@ grow_vertical = 2
 script = ExtResource("1_ixnt2")
 
 [node name="AwesomeCavePixelArt" type="Sprite2D" parent="."]
-material = SubResource("ShaderMaterial_8lxh1")
 position = Vector2(958, 543.5)
 scale = Vector2(1.51719, 1.54583)
 texture = ExtResource("2_e8kqw")
