@@ -1,0 +1,20 @@
+[gd_resource type="TileSet" load_steps=3 format=3 uid="uid://bwhss7y7adklp"]
+
+[ext_resource type="Texture2D" uid="uid://bid3lqqw16xg0" path="res://art/tanQuest_border.png" id="1_hn6xn"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_l13pr"]
+texture = ExtResource("1_hn6xn")
+texture_region_size = Vector2i(21, 21)
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+
+[resource]
+tile_size = Vector2i(21, 21)
+sources/2 = SubResource("TileSetAtlasSource_l13pr")
