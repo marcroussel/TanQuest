@@ -208,7 +208,6 @@ position_smoothing_speed = 10.0
 editor_draw_drag_margin = true
 
 [node name="old_tv_shader" type="ColorRect" parent="Player/PlayerCamera"]
-visible = false
 material = SubResource("ShaderMaterial_uxpdf")
 offset_left = -618.0
 offset_top = -518.0
