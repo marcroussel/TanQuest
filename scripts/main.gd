@@ -71,19 +71,21 @@ func _on_key_picked_up(x, y):
 
 
 # Called when the create_enigma_popup signal has been emitted
-func _on_first_room_door_create_enigma_popup():
+func _on_first_room_door_create_enigma_popup(a : int, b : int, c : int, door : Door):
 	# Verifying if a popup has not been created
 	if not is_popup_created:
 		
 		# Generating the first enigma popup
 		var first_enigma = enigma_popup.instantiate()
-		first_enigma.load(number_of_keys,90,90,0)
+		first_enigma.load(number_of_keys,a,b,c)
 		first_enigma.position = $Player.position
 		add_child(first_enigma)
 		first_enigma.show()
 		
 		# Connecting popup_destroyed signal to the appropriate function
 		first_enigma.popup_destroyed.connect(_on_popup_destroyed) 
+		# Making door open if enigma is solved
+		first_enigma.enigma_solved.connect(door.open)
 
 		# Hiding main node's elements
 		$GameTileMap.hide()
