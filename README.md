@@ -32,4 +32,6 @@ build
 ensuite, dans godot, exporter le projet avec l'outil d'export.
 Les exécutables devraient être généré dans les différents fichiers correspondant à la plateforme
 
+---
+
 ![Logo TanQuest](https://raw.githubusercontent.com/marcroussel/TanQuest/main/tanQuestLogo.png?token=GHSAT0AAAAAACRM37BL2W2PNWJQ4ER4KDZCZRIS2PQ)
