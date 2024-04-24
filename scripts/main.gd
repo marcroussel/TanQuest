@@ -48,6 +48,9 @@ func start_main_menu():
 	$HUD.hide()
 
 
+func quit_game():
+	get_tree().quit()
+
 ## ---------- EVENT PROCEDURES ---------- ##
 
 # Called when the game starts, when the start_game signal has

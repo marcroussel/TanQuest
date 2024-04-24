@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://qkjcnppmijr2"]
+[gd_scene load_steps=14 format=3 uid="uid://qkjcnppmijr2"]
 
 [ext_resource type="Texture2D" uid="uid://d346vijbn1soc" path="res://tanQuestLogo.svg" id="1_8hsm3"]
 [ext_resource type="Script" path="res://scripts/main_menu.gd" id="1_ixnt2"]
@@ -7,6 +7,8 @@
 [ext_resource type="FontFile" uid="uid://bb4qws2xp060x" path="res://fonts/Jersey10Charted-Regular.ttf" id="3_lugcq"]
 [ext_resource type="Shader" path="res://shader/old_tv.gdshader" id="3_yxmen"]
 [ext_resource type="Script" path="res://scripts/sinewave.gd" id="7_84l3h"]
+[ext_resource type="Texture2D" uid="uid://o874u2yh2uys" path="res://art/pause_menu_buttons/quit_normal.png" id="8_3e673"]
+[ext_resource type="Texture2D" uid="uid://ylup1n37n4cv" path="res://art/pause_menu_buttons/quit_clicked.png" id="9_qgdpr"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_2xpyc"]
 shader = ExtResource("3_yxmen")
@@ -118,4 +120,18 @@ number_of_points = 1285
 offset_x = 0.0
 offset_y = 1850.0
 
+[node name="QuitButton" type="TextureButton" parent="."]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -104.0
+offset_top = 8.0
+offset_right = -8.0
+offset_bottom = 40.0
+grow_horizontal = 0
+texture_normal = ExtResource("8_3e673")
+texture_pressed = ExtResource("9_qgdpr")
+
 [connection signal="pressed" from="StartButton" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="QuitButton" to="." method="_on_quit_button_pressed"]

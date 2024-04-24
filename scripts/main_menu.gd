@@ -20,3 +20,7 @@ func _process(delta):
 # Called when the start button has been pressed
 func _on_start_button_pressed():
 	start_game.emit()
+
+# Called when the quit button has been pressed
+func _on_quit_button_pressed():
+	get_parent().quit_game()
