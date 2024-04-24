@@ -63,42 +63,68 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_1lsq7")
 position = Vector2(577, 325)
 
 [node name="ButtonsA" type="Node2D" parent="."]
-position = Vector2(90, 308)
+position = Vector2(90, 315)
 
 [node name="AddA" type="Button" parent="ButtonsA"]
-offset_top = -42.0
+offset_top = -60.0
 offset_right = 50.0
-offset_bottom = 8.0
+offset_bottom = -10.0
 theme_override_fonts/font = ExtResource("3_lpppq")
 theme_override_font_sizes/font_size = 25
 text = "+"
 
 [node name="RemoveA" type="Button" parent="ButtonsA"]
-offset_top = 43.0
+offset_top = 60.0
 offset_right = 50.0
-offset_bottom = 93.0
+offset_bottom = 110.0
 theme_override_fonts/font = ExtResource("3_lpppq")
 theme_override_font_sizes/font_size = 25
 text = "-"
 
+[node name="DeactivateA" type="Label" parent="ButtonsA"]
+visible = false
+offset_left = -9.0
+offset_top = -51.0
+offset_right = 92.0
+offset_bottom = 109.0
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_lpppq")
+theme_override_font_sizes/font_size = 150
+text = "X"
+
 [node name="ButtonsB" type="Node2D" parent="."]
-position = Vector2(270, 308)
+position = Vector2(270, 315)
 
 [node name="AddB" type="Button" parent="ButtonsB"]
-offset_top = -42.0
+offset_top = -60.0
 offset_right = 50.0
-offset_bottom = 8.0
+offset_bottom = -10.0
 theme_override_fonts/font = ExtResource("3_lpppq")
 theme_override_font_sizes/font_size = 25
 text = "+"
 
 [node name="RemoveB" type="Button" parent="ButtonsB"]
-offset_top = 43.0
+offset_top = 60.0
 offset_right = 50.0
-offset_bottom = 93.0
+offset_bottom = 110.0
 theme_override_fonts/font = ExtResource("3_lpppq")
 theme_override_font_sizes/font_size = 25
 text = "-"
+
+[node name="DeactivateB" type="Label" parent="ButtonsB"]
+visible = false
+offset_left = -9.0
+offset_top = -51.0
+offset_right = 92.0
+offset_bottom = 109.0
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_lpppq")
+theme_override_font_sizes/font_size = 150
+text = "X"
 
 [connection signal="button_down" from="ButtonsA/AddA" to="." method="_start_add_a"]
 [connection signal="button_up" from="ButtonsA/AddA" to="." method="reset_state_a"]

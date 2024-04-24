@@ -20,7 +20,15 @@ func load(difficulty,a,b,c,pa = 0,pb = 0, pc = 0):
 	player.amplitude_a = pa
 	player.amplitude_b = pb
 	player.amplitude_c = pc
-
+	if(a == 0):
+		$ButtonsA.visible = false
+	elif(difficulty<1):
+		$ButtonsA/DeactivateA.visible = true
+	if(b == 0):
+		$ButtonsB.visible = false
+	elif(difficulty<2):
+		$ButtonsB/DeactivateB.visible = true
+	
 func _ready():
 	pass # Replace with function body.
 
