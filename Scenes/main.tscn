@@ -1375,7 +1375,6 @@ script = ExtResource("1_hpge4")
 enigma_popup = ExtResource("2_0tbal")
 
 [node name="GameTileMap" type="TileMap" parent="."]
-visible = false
 tile_set = SubResource("TileSet_mh06x")
 format = 2
 layer_0/name = "Objects"
