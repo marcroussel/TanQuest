@@ -1,0 +1,19 @@
+extends Node2D
+
+class_name Player
+
+func freeze_player():
+	$Player.freezed = true
+
+# Used to unfreeze the player
+func unfreeze_player():
+	$Player.freezed = false
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta):
+	pass
