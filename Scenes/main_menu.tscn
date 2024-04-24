@@ -1,9 +1,18 @@
-[gd_scene load_steps=8 format=3 uid="uid://qkjcnppmijr2"]
+[gd_scene load_steps=13 format=3 uid="uid://qkjcnppmijr2"]
 
 [ext_resource type="Texture2D" uid="uid://d346vijbn1soc" path="res://tanQuestLogo.svg" id="1_8hsm3"]
 [ext_resource type="Script" path="res://scripts/main_menu.gd" id="1_ixnt2"]
+[ext_resource type="Texture2D" uid="uid://ckfdv3ih1bu12" path="res://art/awesomeCavePixelArt.png" id="2_e8kqw"]
 [ext_resource type="FontFile" uid="uid://fyed4573i087" path="res://fonts/8bitlim.ttf" id="2_lr5ds"]
 [ext_resource type="FontFile" uid="uid://bb4qws2xp060x" path="res://fonts/Jersey10Charted-Regular.ttf" id="3_lugcq"]
+[ext_resource type="Shader" path="res://shader/old_tv.gdshader" id="3_yxmen"]
+[ext_resource type="Script" path="res://scripts/sinewave.gd" id="7_84l3h"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_8lxh1"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_2xpyc"]
+shader = ExtResource("3_yxmen")
+shader_parameter/scanline_count = 50.0
 
 [sub_resource type="LabelSettings" id="LabelSettings_yfgk2"]
 font = ExtResource("2_lr5ds")
@@ -32,7 +41,14 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_ixnt2")
 
+[node name="AwesomeCavePixelArt" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_8lxh1")
+position = Vector2(958, 543.5)
+scale = Vector2(1.51719, 1.54583)
+texture = ExtResource("2_e8kqw")
+
 [node name="ColorRect" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_2xpyc")
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -94,5 +110,15 @@ text = "Start"
 position = Vector2(963, 543)
 
 [node name="DirectionalLight2D" type="DirectionalLight2D" parent="."]
+
+[node name="Line2D" type="Line2D" parent="."]
+default_color = Color(0, 0, 1, 1)
+antialiased = true
+script = ExtResource("7_84l3h")
+frequency_b = 2.0
+frequency_c = 3.0
+number_of_points = 1285
+offset_x = 0.0
+offset_y = 1850.0
 
 [connection signal="pressed" from="StartButton" to="." method="_on_start_button_pressed"]
