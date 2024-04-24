@@ -15,9 +15,9 @@ TanQuest se divise en deux parties de gameplay distinctes :
 à la racine du projet, créer l'arborescence suivante :
 ```
 build
-\-mac
-\-windows
-\-web
+|-mac
+|-windows
+|-web
 \-linux
 
 ```
