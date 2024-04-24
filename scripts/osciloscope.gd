@@ -28,6 +28,8 @@ func load(difficulty,a,b,c,pa = 0,pb = 0, pc = 0):
 		$ButtonsB.visible = false
 	elif(difficulty<2):
 		$ButtonsB/DeactivateB.visible = true
+	if(c == 0):
+		$ButtonsC.visible = false
 	
 func _ready():
 	pass # Replace with function body.
