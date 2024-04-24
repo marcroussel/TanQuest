@@ -16,7 +16,7 @@ var animation_node:AnimatedSprite2D
 var commandLabel:Label
 var is_player_detected:bool
 
-signal create_enigma_popup(a : int, b : int, c : int) # Signal sent to main to launch a new popup
+signal create_enigma_popup(a : int, b : int, c : int, door:Door) # Signal sent to main to launch a new popup
 
 ## ----- METHODS ----- ##
 # Called when the node enters the scene tree for the first time.
@@ -32,7 +32,7 @@ func _ready():
 # Used to send the signal when the player is detected and the a key is pressed
 func _process(delta):
 	if Input.is_action_pressed("general_action") and is_player_detected:
-		create_enigma_popup.emit(a_enigma,b_enigma,c_enigma) # We sent the signal to main to create the enigma popup
+		create_enigma_popup.emit(a_enigma,b_enigma,c_enigma,self) # We sent the signal to main to create the enigma popup
 
 # Function opening the door and removing collision shapes and commandLabel
 func open():
