@@ -1411,13 +1411,8 @@ position = Vector2(58, -588)
 light_size = 1.2
 light_variation_size = 0.5
 
-[node name="torch2" parent="GameTileMap/torch5/torch/torch/torch" instance=ExtResource("8_n8scy")]
-position = Vector2(548, 719)
-light_size = 1.2
-light_variation_size = 0.5
-
-[node name="torch" parent="GameTileMap/torch5/torch/torch/torch/torch2" instance=ExtResource("8_n8scy")]
-position = Vector2(-938, 495)
+[node name="torch" parent="GameTileMap/torch5/torch/torch/torch/torch" instance=ExtResource("8_n8scy")]
+position = Vector2(-448, 1802)
 light_size = 1.2
 light_variation_size = 0.5
 
