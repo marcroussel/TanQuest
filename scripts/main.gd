@@ -20,6 +20,13 @@ func _process(delta):
 	pass
 
 
+# Used to freeze the player
+func freeze_player():
+	$Player/Player.freezed = true;
+
+# Used to unfreeze the player
+func unfreeze_player():
+	$Player/Player.freezed = false;
 
 # Used to make the main menu appear
 func start_main_menu():
@@ -30,7 +37,7 @@ func start_main_menu():
 	$MainMenu.show()
 	
 	# We freeze the player
-	$Player/Player.freezed = true
+	freeze_player()
 	
 	# Switching to main_menu_camera
 	$MainMenu.main_menu_camera.make_current()
@@ -57,7 +64,7 @@ func start_game():
 	
 	
 	# We unfreeze the player
-	$Player/Player.freezed = false
+	unfreeze_player()
 	
 	# Switching to player's camera
 	$Player/Player/PlayerCamera.make_current()
@@ -89,7 +96,7 @@ func _on_first_room_door_create_enigma_popup(a : int, b : int, c : int, door : D
 		# Hiding main node's elements
 		#$GameTileMap.hide()
 		#$Player.hide()
-		$Player/Player.freezed = true
+		freeze_player()
 		
 		# Reducing PlayerCamera's zoom
 		#$Player/Player/PlayerCamera.zoom = Vector2(2,2)
@@ -103,7 +110,7 @@ func _on_popup_destroyed():
 	# Showing main node's elements
 	#$GameTileMap.show()
 	#$Player.show()
-	$Player/Player.freezed = false
+	unfreeze_player()
 	
 	# Returning to PlayerCamera's default zoom
 	#$Player/Player/PlayerCamera.zoom = Vector2(DEFAULT_PLAYER_CAMERA_ZOOM,DEFAULT_PLAYER_CAMERA_ZOOM)

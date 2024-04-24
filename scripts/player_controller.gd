@@ -362,3 +362,5 @@ func calculate_speed(p_max_speed, p_friction):
 func _on_jumped(is_ground_jump):
 	if(!is_ground_jump):
 		animation_node.animation = DASH_ANIMATION
+
+

@@ -64,13 +64,7 @@ theme_override_styles/focus = SubResource("StyleBoxEmpty_87efj")
 shortcut = SubResource("Shortcut_7mora")
 icon = ExtResource("1_j4wn2")
 
-[node name="TileMap" type="TileMap" parent="."]
-scale = Vector2(2, 2)
-tile_set = SubResource("TileSet_mjxgu")
-format = 2
-layer_0/tile_data = PackedInt32Array(917533, 65536, 0, 917532, 65536, 0, 917534, 65536, 0, 917535, 65536, 0, 917531, 0, 0, 917536, 196608, 0, 983068, 65536, 1, 983069, 65536, 1, 983070, 65536, 1, 983071, 65536, 1, 983072, 196608, 1, 983067, 0, 1, 1048603, 0, 1, 1048604, 65536, 1, 1114140, 65536, 1, 1114139, 0, 1, 1179675, 0, 1, 1179676, 65536, 1, 1048605, 65536, 1, 1048606, 65536, 1, 1048607, 65536, 1, 1048608, 196608, 1, 1114144, 196608, 1, 1114143, 65536, 1, 1179679, 65536, 1, 1245215, 65536, 3, 1245214, 65536, 3, 1245213, 65536, 3, 1245212, 65536, 3, 1245211, 0, 3, 1245216, 196608, 3, 1179680, 196608, 1, 1179677, 65536, 1, 1179678, 65536, 1)
-
-[node name="ButtonContainer" type="VBoxContainer" parent="."]
+[node name="PauseMenuContainer" type="VBoxContainer" parent="."]
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -83,7 +77,14 @@ offset_bottom = 35.5
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="PauseMenuLabel" type="Label" parent="ButtonContainer"]
+[node name="TileMap" type="TileMap" parent="PauseMenuContainer"]
+position = Vector2(-912, -468.5)
+scale = Vector2(2, 2)
+tile_set = SubResource("TileSet_mjxgu")
+format = 2
+layer_0/tile_data = PackedInt32Array(917533, 65536, 0, 917532, 65536, 0, 917534, 65536, 0, 917535, 65536, 0, 917531, 0, 0, 917536, 196608, 0, 983068, 65536, 1, 983069, 65536, 1, 983070, 65536, 1, 983071, 65536, 1, 983072, 196608, 1, 983067, 0, 1, 1048603, 0, 1, 1048604, 65536, 1, 1114140, 65536, 1, 1114139, 0, 1, 1179675, 0, 1, 1179676, 65536, 1, 1048605, 65536, 1, 1048606, 65536, 1, 1048607, 65536, 1, 1048608, 196608, 1, 1114144, 196608, 1, 1114143, 65536, 1, 1179679, 65536, 1, 1245215, 65536, 3, 1245214, 65536, 3, 1245213, 65536, 3, 1245212, 65536, 3, 1245211, 0, 3, 1245216, 196608, 3, 1179680, 196608, 1, 1179677, 65536, 1, 1179678, 65536, 1, 1114141, 65536, 1, 1114142, 65536, 1)
+
+[node name="PauseMenuLabel" type="Label" parent="PauseMenuContainer"]
 z_index = 1
 layout_mode = 2
 size_flags_horizontal = 4
@@ -92,18 +93,21 @@ label_settings = SubResource("LabelSettings_ww2j0")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="ResumeButton" type="TextureButton" parent="ButtonContainer"]
+[node name="ResumeButton" type="TextureButton" parent="PauseMenuContainer"]
 layout_mode = 2
 shortcut = SubResource("Shortcut_s7e6g")
 texture_normal = ExtResource("4_ey4ki")
 texture_pressed = ExtResource("5_uk47v")
 
-[node name="MainMenuButton" type="TextureButton" parent="ButtonContainer"]
+[node name="MainMenuButton" type="TextureButton" parent="PauseMenuContainer"]
 layout_mode = 2
 texture_normal = ExtResource("5_8wnwl")
 texture_pressed = ExtResource("7_hvvhx")
 
-[node name="TextureButton" type="TextureButton" parent="ButtonContainer"]
+[node name="TextureButton" type="TextureButton" parent="PauseMenuContainer"]
 layout_mode = 2
 texture_normal = ExtResource("6_gyr7x")
 texture_pressed = ExtResource("9_r50q7")
+
+[connection signal="pressed" from="PauseButton" to="." method="_show_pause_menu"]
+[connection signal="pressed" from="PauseMenuContainer/ResumeButton" to="." method="_on_resume_button_pressed"]
