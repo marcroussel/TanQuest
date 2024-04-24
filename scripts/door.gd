@@ -38,6 +38,7 @@ func _process(delta):
 func open():
 	player_detector.queue_free()
 	hitbox.queue_free()
+	$KeySound.play(0.0)
 	commandLabel.queue_free()
 	animation_node.play()
 	pass
