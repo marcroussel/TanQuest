@@ -35,9 +35,9 @@ func _ready():
 	pass # Replace with function body.
 
 func enigma_validation() -> bool : #returns true if the enigma is solved, false if not
-	if(player.amplitude_a > target.amplitude_a-precision && player.amplitude_a<target.amplitude_a+precision):
-		if(player.amplitude_b > target.amplitude_b-precision && player.amplitude_b<target.amplitude_b+precision):
-			if(player.amplitude_c > target.amplitude_c-precision && player.amplitude_c<target.amplitude_c+precision):
+	if(player.amplitude_a >= target.amplitude_a-precision && player.amplitude_a<=target.amplitude_a+precision):
+		if(player.amplitude_b >= target.amplitude_b-precision && player.amplitude_b<=target.amplitude_b+precision):
+			if(player.amplitude_c >= target.amplitude_c-precision && player.amplitude_c<=target.amplitude_c+precision):
 				return true
 	return false
 
