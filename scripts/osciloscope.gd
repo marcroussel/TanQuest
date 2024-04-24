@@ -36,6 +36,7 @@ func load(difficulty,a,b,c,pa = 0,pb = 0, pc = 0):
 		$ButtonsC/DeactivateC.visible = true
 	
 func _ready():
+	$formula_target.text = "%d sin(x) + %d sin(2x) + %d sin(3x)" % [target.amplitude_a,target.amplitude_b,target.amplitude_c]
 	pass # Replace with function body.
 
 func enigma_validation() -> bool : #returns true if the enigma is solved, false if not
@@ -53,6 +54,7 @@ func _process(delta):
 			player.amplitude_b += b_state
 			if(difficulty>=3):
 				player.amplitude_c += c_state
+	$formula_player.text = "%d sin(x) + %d sin(2x) + %d sin(3x)" % [player.amplitude_a,player.amplitude_b,player.amplitude_c]
 	if(enigma_validation()):
 		enigma_solved.emit()
 		print("Enigma Solved")

@@ -17,6 +17,7 @@ position = Vector2(-577, -325)
 script = ExtResource("1_0806j")
 player = NodePath("ColorRect/player")
 target = NodePath("ColorRect/target")
+precision = 0
 
 [node name="ColorRect" type="ColorRect" parent="."]
 self_modulate = Color(0, 0, 0, 1)
@@ -164,6 +165,31 @@ theme_override_fonts/font = ExtResource("3_lpppq")
 theme_override_font_sizes/font_size = 150
 text = "X"
 metadata/_edit_use_anchors_ = true
+
+[node name="ColorRect2" type="ColorRect" parent="."]
+offset_left = 368.0
+offset_top = -10.0
+offset_right = 789.0
+offset_bottom = 55.0
+color = Color(0, 0, 0, 1)
+
+[node name="formula_player" type="Label" parent="."]
+offset_left = 472.0
+offset_top = -3.0
+offset_right = 611.0
+offset_bottom = 20.0
+theme_override_colors/font_color = Color(0, 0, 1, 1)
+theme_override_fonts/font = ExtResource("3_lpppq")
+text = "a sin(x) + b sin(2x)"
+
+[node name="formula_target" type="Label" parent="."]
+offset_left = 473.0
+offset_top = 23.0
+offset_right = 612.0
+offset_bottom = 46.0
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_lpppq")
+text = "a sin(x) + b sin(2x)"
 
 [connection signal="button_down" from="ButtonsA/AddA" to="." method="_start_add_a"]
 [connection signal="button_up" from="ButtonsA/AddA" to="." method="reset_state_a"]
