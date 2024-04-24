@@ -13,6 +13,7 @@ border_width_bottom = 10
 border_color = Color(0.129412, 0.129412, 0.129412, 1)
 
 [node name="Osciloscope" type="Node2D" node_paths=PackedStringArray("player", "target")]
+position = Vector2(-577, -325)
 script = ExtResource("1_0806j")
 player = NodePath("ColorRect/player")
 target = NodePath("ColorRect/target")
@@ -22,6 +23,7 @@ self_modulate = Color(0, 0, 0, 1)
 offset_top = 61.0
 offset_right = 1153.0
 offset_bottom = 248.0
+metadata/_edit_use_anchors_ = true
 
 [node name="target" type="Line2D" parent="ColorRect"]
 position = Vector2(0, -61)
@@ -58,6 +60,7 @@ layout_mode = 0
 offset_right = 1156.0
 offset_bottom = 186.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_1lsq7")
+metadata/_edit_use_anchors_ = true
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(577, 325)
@@ -72,6 +75,7 @@ offset_bottom = -10.0
 theme_override_fonts/font = ExtResource("3_lpppq")
 theme_override_font_sizes/font_size = 25
 text = "+"
+metadata/_edit_use_anchors_ = true
 
 [node name="RemoveA" type="Button" parent="ButtonsA"]
 offset_top = 60.0
@@ -80,6 +84,7 @@ offset_bottom = 110.0
 theme_override_fonts/font = ExtResource("3_lpppq")
 theme_override_font_sizes/font_size = 25
 text = "-"
+metadata/_edit_use_anchors_ = true
 
 [node name="DeactivateA" type="Label" parent="ButtonsA"]
 visible = false
@@ -104,6 +109,7 @@ offset_bottom = -10.0
 theme_override_fonts/font = ExtResource("3_lpppq")
 theme_override_font_sizes/font_size = 25
 text = "+"
+metadata/_edit_use_anchors_ = true
 
 [node name="RemoveB" type="Button" parent="ButtonsB"]
 offset_top = 60.0
@@ -112,6 +118,7 @@ offset_bottom = 110.0
 theme_override_fonts/font = ExtResource("3_lpppq")
 theme_override_font_sizes/font_size = 25
 text = "-"
+metadata/_edit_use_anchors_ = true
 
 [node name="DeactivateB" type="Label" parent="ButtonsB"]
 visible = false
@@ -136,6 +143,7 @@ offset_bottom = -10.0
 theme_override_fonts/font = ExtResource("3_lpppq")
 theme_override_font_sizes/font_size = 25
 text = "+"
+metadata/_edit_use_anchors_ = true
 
 [node name="RemoveC" type="Button" parent="ButtonsC"]
 offset_top = 60.0
@@ -144,6 +152,7 @@ offset_bottom = 110.0
 theme_override_fonts/font = ExtResource("3_lpppq")
 theme_override_font_sizes/font_size = 25
 text = "-"
+metadata/_edit_use_anchors_ = true
 
 [node name="DeactivateC" type="Label" parent="ButtonsC"]
 offset_left = -9.0
@@ -156,6 +165,7 @@ theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("3_lpppq")
 theme_override_font_sizes/font_size = 150
 text = "X"
+metadata/_edit_use_anchors_ = true
 
 [connection signal="button_down" from="ButtonsA/AddA" to="." method="_start_add_a"]
 [connection signal="button_up" from="ButtonsA/AddA" to="." method="reset_state_a"]
