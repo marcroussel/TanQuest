@@ -1389,6 +1389,7 @@ position = Vector2(169, 115)
 
 [node name="FirstRoomDoor" parent="GameTileMap" instance=ExtResource("6_2dcub")]
 position = Vector2(562, 304)
+a_enigma = 90
 
 [node name="torch" parent="GameTileMap" instance=ExtResource("8_n8scy")]
 position = Vector2(562, 305)
