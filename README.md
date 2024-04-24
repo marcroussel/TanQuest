@@ -14,6 +14,13 @@ TanQuest se divise en deux parties de gameplay distinctes :
 
 à la racine du projet, créer l'arborescence suivante :
 ```
+art
+fonts
+Scenes
+scripts
+settings
+shader
+sounds
 build
 |-mac
 |-windows
