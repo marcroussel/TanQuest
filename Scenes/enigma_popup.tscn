@@ -33,6 +33,11 @@ events = [SubResource("InputEventKey_qc6fb")]
 script = ExtResource("1_tbhwa")
 osciloscope = NodePath("Osciloscope")
 
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_right = 1916.0
+offset_bottom = 1076.0
+color = Color(0, 0, 0, 0.603922)
+
 [node name="TileMap" type="TileMap" parent="."]
 position = Vector2(950, 474)
 tile_set = SubResource("TileSet_qmy8u")

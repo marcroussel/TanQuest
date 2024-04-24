@@ -62,9 +62,6 @@ offset_bottom = 186.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_1lsq7")
 metadata/_edit_use_anchors_ = true
 
-[node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(577, 325)
-
 [node name="ButtonsA" type="Node2D" parent="."]
 position = Vector2(90, 315)
 

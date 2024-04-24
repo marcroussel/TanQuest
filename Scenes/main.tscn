@@ -1375,6 +1375,7 @@ script = ExtResource("1_hpge4")
 enigma_popup = ExtResource("2_0tbal")
 
 [node name="GameTileMap" type="TileMap" parent="."]
+visible = false
 tile_set = SubResource("TileSet_mh06x")
 format = 2
 layer_0/name = "Objects"
@@ -1434,6 +1435,7 @@ camera_attributes = SubResource("CameraAttributesPractical_cfor4")
 visible = false
 
 [node name="HUD" parent="." instance=ExtResource("11_7jbsv")]
+layer = 2
 visible = false
 
 [connection signal="key_picked_up" from="GameTileMap/FirstRoomKey" to="." method="_on_key_picked_up"]

@@ -87,12 +87,12 @@ func _on_first_room_door_create_enigma_popup(a : int, b : int, c : int, door : D
 		first_enigma.enigma_solved.connect(door.open)
 
 		# Hiding main node's elements
-		$GameTileMap.hide()
-		$Player.hide()
+		#$GameTileMap.hide()
+		#$Player.hide()
 		$Player/Player.freezed = true
 		
 		# Reducing PlayerCamera's zoom
-		$Player/Player/PlayerCamera.zoom = Vector2(2,2)
+		#$Player/Player/PlayerCamera.zoom = Vector2(2,2)
 		
 		is_popup_created = true
 
@@ -101,11 +101,11 @@ func _on_first_room_door_create_enigma_popup(a : int, b : int, c : int, door : D
 func _on_popup_destroyed():
 	
 	# Showing main node's elements
-	$GameTileMap.show()
-	$Player.show()
+	#$GameTileMap.show()
+	#$Player.show()
 	$Player/Player.freezed = false
 	
 	# Returning to PlayerCamera's default zoom
-	$Player/Player/PlayerCamera.zoom = Vector2(DEFAULT_PLAYER_CAMERA_ZOOM,DEFAULT_PLAYER_CAMERA_ZOOM)
+	#$Player/Player/PlayerCamera.zoom = Vector2(DEFAULT_PLAYER_CAMERA_ZOOM,DEFAULT_PLAYER_CAMERA_ZOOM)
 	
 	is_popup_created = false
