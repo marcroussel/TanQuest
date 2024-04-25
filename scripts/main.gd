@@ -47,7 +47,7 @@ func start_main_menu():
 	
 	$HUD.hide()
 
-
+# Used to quit completely the game 
 func quit_game():
 	get_tree().quit()
 
